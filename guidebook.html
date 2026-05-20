@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guidebooks — MSME Registrations & Processes | MSMEHub</title>
+  <meta name="description" content="Step-by-step guides for Udyam, GST, FSSAI, IEC, LEI, Income Tax, Bank Selection and more for Indian MSMEs.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FF6B00'/><text y='.9em' font-size='70' x='15'>M</text></svg>">
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand"><div class="brand-logo">M</div><span class="brand-text">MSME<span>Hub</span></span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="schemes.html">Govt Schemes</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="guidebook.html" class="active">Guidebook</a></li>
+    <li><a href="finance.html">Finance</a></li>
+    <li><a href="tax.html">Tax &amp; Cert.</a></li>
+    <li><a href="compliance.html">Compliance</a></li>
+    <li><a href="growth.html">Growth</a></li>
+    <li><a href="connect.html" class="nav-cta btn">Connect</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<main class="main-content">
+  <section style="background:linear-gradient(135deg,var(--navy),var(--navy-mid));padding:4rem 2rem 3rem;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 90% 40%,rgba(255,107,0,0.13),transparent 60%)"></div>
+    <div class="container" style="position:relative;z-index:1">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem">
+        <a href="../index.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem">Home</a>
+        <span style="color:rgba(255,255,255,0.3)">›</span>
+        <span style="color:var(--saffron);font-size:0.85rem">Guidebooks</span>
+      </div>
+      <h1 style="font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:white;margin-bottom:0.75rem">MSME Guidebooks</h1>
+      <p style="color:rgba(255,255,255,0.65);max-width:620px">Comprehensive step-by-step guides for every registration, license, and process your business needs — in plain language with official portal links.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="guide-grid">
+
+        <!-- Udyam -->
+        <div class="guide-card" onclick="openModal('g-udyam')">
+          <div class="guide-icon">🏭</div>
+          <h3>Udyam Registration</h3>
+          <p>Free, lifetime MSME registration. Eligibility, classification, documents, step-by-step process, and benefits explained.</p>
+          <div class="guide-links">
+            <a href="https://udyamregistration.gov.in" target="_blank" class="guide-link" onclick="event.stopPropagation()">📄 Official Portal →</a>
+            <span class="guide-link" onclick="event.stopPropagation();openModal('g-udyam')">▶ Full Guide</span>
+          </div>
+        </div>
+
+        <!-- GST Registration -->
+        <div class="guide-card" onclick="openModal('g-gst')">
+          <div class="guide-icon">🧾</div>
+          <h3>GST Registration</h3>
+          <p>When to register, how to apply, documents required, composition vs regular scheme — all in simple steps.</p>
+          <div class="guide-links">
+            <a href="https://reg.gst.gov.in" target="_blank" class="guide-link" onclick="event.stopPropagation()">📄 GST Portal →</a>
+            <span class="guide-link" onclick="event.stopPropagation();openModal('g-gst')">▶ Full Guide</span>
+          </div>
+        </div>
+
+        <!-- Bank Selection -->
+        <div class="guide-card" onclick="openModal('g-bank')">
+          <div class="guide-icon">🏦</div>
+          <h3>How to Choose the Right Bank</h3>
+          <p>Interest rates, processing fees, MSME specialisation, digital features — factors that matter when picking your banking partner.</p>
+          <div class="guide-links">
+            <span class="guide-link" onclick="event.stopPropagation();openModal('g-bank')">▶ Full Guide</span>
+          </div>
+        </div>
+
+        <!-- IEC -->
+        <div class="guide-card" onclick="openModal('g-iec')">
+          <div class="guide-icon">🌍</div>
+          <h3>Export Import Licence (IEC)</h3>
+          <p>Importer Exporter Code — who needs it, documents, application process, validity, and AD Code from your bank.</p>
+          <div class="guide-links">
+            <a href="https://dgft.gov.in" target="_blank" class="guide-link" onclick="event.stopPropagation()">📄 DGFT Portal →</a>
+            <span class="guide-link" onclick="event.stopPropagation();openModal('g-iec')">▶ Full Guide</span>
+          </div>
+        </div>
+
+        <!-- FSSAI -->
+        <div class="guide-card" onclick="openModal('g-fssai')">
+          <div class="guide-icon">🥗</div>
+          <h3>FSSAI License</h3>
+          <p>Food safety license — Basic, State, Central. Turnover criteria, documents, renewal, and key compliances explained.</p>
+          <div class="guide-links">
+            <a href="https://foscos.fssai.gov.in" target="_blank" class="guide-link" onclick="event.stopPropagation()">📄 FOSCOS Portal →</a>
+            <span class="guide-link" onclick="event.stopPropagation();openModal('g-fssai')">▶ Full Guide</span>
+          </div>
+        </div>
+
+        <!-- LEI -->
+        <div class="guide-card" onclick="openModal('g-lei')">
+          <div class="guide-icon">🔢</div>
+          <h3>LEI — Legal Entity Identifier</h3>
+          <p>Mandatory for larger borrowers. What is LEI, who needs it, how to apply, annual renewal, and consequences of lapse.</p>
+          <div class="guide-links">
+            <a href="https://www.leil.in" target="_blank" class="guide-link" onclick="event.stopPropagation()">📄 LEIL Portal →</a>
+            <span class="guide-link" onclick="event.stopPropagation();openModal('g-lei')">▶ Full Guide</span>
+          </div>
+        </div>
+
+        <!-- IT Calculator -->
+        <div class="guide-card" onclick="openModal('g-it')">
+          <div class="guide-icon">📊</div>
+          <h3>Income Tax Guide for MSMEs</h3>
+          <p>Old vs New regime, presumptive taxation (44AD/44ADA), ITR filing, advance tax schedule, and key deductions.</p>
+          <div class="guide-links">
+            <a href="https://www.incometax.gov.in" target="_blank" class="guide-link" onclick="event.stopPropagation()">📄 IT Portal →</a>
+            <span class="guide-link" onclick="event.stopPropagation();openModal('g-it')">▶ Full Guide</span>
+          </div>
+        </div>
+
+        <!-- GST Composition vs Regular -->
+        <div class="guide-card" onclick="openModal('g-gstcomp')">
+          <div class="guide-icon">⚖️</div>
+          <h3>GST: Composition vs Regular Scheme</h3>
+          <p>Which GST scheme is right for your MSME? Turnover limits, tax rates, input credit, invoice rules, and eligibility compared.</p>
+          <div class="guide-links">
+            <a href="https://www.gst.gov.in" target="_blank" class="guide-link" onclick="event.stopPropagation()">📄 GST Portal →</a>
+            <span class="guide-link" onclick="event.stopPropagation();openModal('g-gstcomp')">▶ Full Guide</span>
+          </div>
+        </div>
+
+        <!-- Trade Mark -->
+        <div class="guide-card" onclick="openModal('g-tm')">
+          <div class="guide-icon">™️</div>
+          <h3>Trademark Registration</h3>
+          <p>Protect your brand name and logo. Classes, application process, costs, objections, and priority for startups and MSMEs.</p>
+          <div class="guide-links">
+            <a href="https://ipindia.gov.in" target="_blank" class="guide-link" onclick="event.stopPropagation()">📄 IP India →</a>
+            <span class="guide-link" onclick="event.stopPropagation();openModal('g-tm')">▶ Full Guide</span>
+          </div>
+        </div>
+
+        <!-- Shop Act -->
+        <div class="guide-card" onclick="openModal('g-shop')">
+          <div class="guide-icon">🏪</div>
+          <h3>Shops & Establishments Act</h3>
+          <p>State-level registration every commercial establishment must have. Coverage, documents, fees, and renewal process.</p>
+          <div class="guide-links">
+            <span class="guide-link" onclick="event.stopPropagation();openModal('g-shop')">▶ Full Guide</span>
+          </div>
+        </div>
+
+        <!-- PF/ESI Registration -->
+        <div class="guide-card" onclick="openModal('g-pfesi')">
+          <div class="guide-icon">👷</div>
+          <h3>PF & ESI Registration</h3>
+          <p>When registration becomes mandatory, how to register on EPFO/ESIC portals, contribution rates, and monthly compliance.</p>
+          <div class="guide-links">
+            <a href="https://www.epfindia.gov.in" target="_blank" class="guide-link" onclick="event.stopPropagation()">📄 EPFO Portal →</a>
+            <span class="guide-link" onclick="event.stopPropagation();openModal('g-pfesi')">▶ Full Guide</span>
+          </div>
+        </div>
+
+        <!-- GeM Registration -->
+        <div class="guide-card" onclick="openModal('g-gem')">
+          <div class="guide-icon">💎</div>
+          <h3>GeM — Government e-Marketplace</h3>
+          <p>Sell directly to government departments. How to register, list products/services, bid on tenders, and get paid quickly.</p>
+          <div class="guide-links">
+            <a href="https://gem.gov.in" target="_blank" class="guide-link" onclick="event.stopPropagation()">📄 GeM Portal →</a>
+            <span class="guide-link" onclick="event.stopPropagation();openModal('g-gem')">▶ Full Guide</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ═══════════════ MODALS ═══════════════ -->
+
+<!-- UDYAM -->
+<div class="modal-overlay" id="g-udyam">
+  <div class="modal" style="position:relative">
+    <div class="modal-header" style="position:relative">
+      <button class="modal-close" onclick="closeModal('g-udyam')">✕</button>
+      <h2>📖 Udyam Registration — Complete Guide</h2>
+      <p>Free, Lifetime MSME Identity Certificate | udyamregistration.gov.in</p>
+    </div>
+    <div class="modal-body">
+      <div class="detail-section"><h4>What is Udyam Registration?</h4>
+        <p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">Udyam Registration is the official government registration for MSMEs in India, replacing the older Udyog Aadhaar (UAM) system from July 2020. It is 100% free, online, paperless, and self-declaration based. Upon registration, you receive a permanent Udyam Registration Number (URN) and a digital Udyam Certificate — the gateway to all MSME government schemes and benefits.</p>
+      </div>
+      <div class="detail-section"><h4>MSME Classification (Revised 2020)</h4>
+        <div style="overflow-x:auto">
+          <table class="invoice-table" style="font-size:0.85rem">
+            <thead><tr><th>Category</th><th>Investment in P&M / Equipment</th><th>Annual Turnover</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Micro</strong></td><td>Up to ₹1 Crore</td><td>Up to ₹5 Crore</td></tr>
+              <tr><td><strong>Small</strong></td><td>Up to ₹10 Crore</td><td>Up to ₹50 Crore</td></tr>
+              <tr><td><strong>Medium</strong></td><td>Up to ₹50 Crore</td><td>Up to ₹250 Crore</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.82rem;color:var(--gray-600);margin-top:0.5rem">Both investment AND turnover criteria must be satisfied. If either exceeds the limit, the enterprise moves to the next category.</p>
+      </div>
+      <div class="detail-section"><h4>Documents Required</h4>
+        <ul class="benefit-list">
+          <li>Aadhaar Card of the proprietor / managing partner / authorised director</li>
+          <li>PAN Card of the enterprise and individual</li>
+          <li>GSTIN (if GST registered — auto-fetched from GSTN)</li>
+          <li>Bank account details (account number and IFSC)</li>
+          <li>NIC (National Industrial Classification) Code for your activity</li>
+          <li>Investment details in plant & machinery / equipment</li>
+        </ul>
+      </div>
+      <div class="detail-section"><h4>Step-by-Step Registration Process</h4>
+        <ul class="benefit-list">
+          <li><strong>Step 1:</strong> Visit <a href="https://udyamregistration.gov.in" target="_blank" style="color:var(--saffron)">udyamregistration.gov.in</a></li>
+          <li><strong>Step 2:</strong> Click "For New Entrepreneurs who are not Registered yet as MSME"</li>
+          <li><strong>Step 3:</strong> Enter Aadhaar number and Name → validate with OTP on registered mobile</li>
+          <li><strong>Step 4:</strong> PAN verification → select enterprise type (Proprietorship / Partnership / Pvt Ltd etc.)</li>
+          <li><strong>Step 5:</strong> Fill enterprise details: name, address, bank details, NIC code</li>
+          <li><strong>Step 6:</strong> Enter investment and turnover figures (last financial year)</li>
+          <li><strong>Step 7:</strong> Submit and get instant Udyam Certificate on registered email</li>
+        </ul>
+      </div>
+      <div class="detail-section"><h4>Key Benefits of Udyam Registration</h4>
+        <ul class="benefit-list">
+          <li>Access to all MSME government schemes (CGTMSE, ECLGS, PMEGP, ZED etc.)</li>
+          <li>Priority sector lending from banks at lower interest rates</li>
+          <li>Protection under MSME Samadhaan — mandatory 45-day payment from buyers</li>
+          <li>Electricity at concessional tariff in many states</li>
+          <li>ISO certification cost reimbursement</li>
+          <li>Exemption / concession in government tender earnest money deposit (EMD)</li>
+          <li>25% reservation in government procurement for MSEs</li>
+          <li>Concession in patent and trademark registration fees (50%)</li>
+        </ul>
+      </div>
+      <div class="info-box"><strong>💡 Important Notes</strong><ul style="margin-top:0.5rem;padding-left:1.25rem;font-size:0.88rem;line-height:1.9"><li>One PAN = One Udyam Registration (even for multiple businesses)</li><li>Existing UAM holders must re-register on Udyam portal</li><li>Certificate is permanent — no renewal required. But update if classification changes.</li><li>Registration is free — avoid paid agents/websites claiming to register</li></ul></div>
+      <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="https://udyamregistration.gov.in" target="_blank" class="btn btn-primary btn-sm">🌐 Register Now — Free</a>
+        <a href="https://msme.gov.in" target="_blank" class="btn btn-outline btn-sm" style="color:var(--navy);border-color:var(--gray-300)">📄 MSME Ministry</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GST REGISTRATION -->
+<div class="modal-overlay" id="g-gst">
+  <div class="modal" style="position:relative">
+    <div class="modal-header" style="position:relative">
+      <button class="modal-close" onclick="closeModal('g-gst')">✕</button>
+      <h2>📖 GST Registration Guide</h2>
+      <p>When to Register | How to Apply | Composition vs Regular</p>
+    </div>
+    <div class="modal-body">
+      <div class="detail-section"><h4>When is GST Registration Mandatory?</h4>
+        <ul class="benefit-list">
+          <li>Annual turnover &gt; ₹40 lakh for goods suppliers (₹20 lakh for services)</li>
+          <li>&gt; ₹10 lakh in special category states (NE states, J&K, Himachal, Uttarakhand)</li>
+          <li>Inter-state supply of goods/services — regardless of turnover</li>
+          <li>E-commerce sellers — regardless of turnover</li>
+          <li>Casual taxable persons / non-resident taxable persons</li>
+          <li>Persons liable to deduct TDS under GST (Sec 51)</li>
+        </ul>
+      </div>
+      <div class="detail-section"><h4>Documents Required</h4>
+        <ul class="benefit-list">
+          <li>PAN Card of the business entity</li>
+          <li>Aadhaar of promoters / directors / partners</li>
+          <li>Proof of business address (electricity bill / rent/lease agreement)</li>
+          <li>Bank account details — cancelled cheque or bank statement</li>
+          <li>Photos of promoters (JPG, &lt;100KB each)</li>
+          <li>Digital Signature Certificate (DSC) for companies/LLPs</li>
+          <li>Incorporation certificate (for Pvt Ltd / LLP)</li>
+          <li>Partnership deed (for firms)</li>
+        </ul>
+      </div>
+      <div class="detail-section"><h4>Step-by-Step Registration</h4>
+        <ul class="benefit-list">
+          <li><strong>Step 1:</strong> Visit <a href="https://www.gst.gov.in" target="_blank" style="color:var(--saffron)">gst.gov.in</a> → Services → Registration → New Registration</li>
+          <li><strong>Step 2:</strong> Fill Part A: PAN, email, mobile → OTP verification → TRN generated</li>
+          <li><strong>Step 3:</strong> Fill Part B using TRN: Business details, promoter info, bank details, place of business</li>
+          <li><strong>Step 4:</strong> Upload all documents → DSC / EVC / e-sign</li>
+          <li><strong>Step 5:</strong> ARN (Application Reference Number) generated</li>
+          <li><strong>Step 6:</strong> GSO officer processes → GSTIN issued within 3–7 working days</li>
+        </ul>
+      </div>
+      <div class="detail-section"><h4>After Registration — What's Next?</h4>
+        <ul class="benefit-list">
+          <li>Display GSTIN prominently at your place of business</li>
+          <li>Issue GST invoices for every supply (with GSTIN, HSN codes, tax breakup)</li>
+          <li>File GSTR-1 (outward supplies) by 11th of following month</li>
+          <li>File GSTR-3B (summary return) by 20th of following month</li>
+          <li>File GSTR-9 (Annual Return) by 31st December</li>
+        </ul>
+      </div>
+      <div class="info-box"><strong>💡 Composition Scheme Option:</strong> If turnover is below ₹1.5 crore and you sell mostly to end consumers, consider the Composition Scheme — pay flat 1–5% tax on turnover, file quarterly returns only, and avoid monthly GSTR-1/3B. However, you cannot collect GST from customers and lose input tax credit.</div>
+      <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="https://reg.gst.gov.in" target="_blank" class="btn btn-primary btn-sm">🌐 Register on GST Portal</a>
+        <a href="https://tutorial.gst.gov.in" target="_blank" class="btn btn-outline btn-sm" style="color:var(--navy);border-color:var(--gray-300)">📚 GST Tutorials</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BANK SELECTION -->
+<div class="modal-overlay" id="g-bank">
+  <div class="modal" style="position:relative">
+    <div class="modal-header" style="position:relative">
+      <button class="modal-close" onclick="closeModal('g-bank')">✕</button>
+      <h2>📖 How to Choose the Right Bank for Your MSME</h2>
+      <p>A Practical Decision Framework for Business Owners</p>
+    </div>
+    <div class="modal-body">
+      <div class="detail-section"><h4>Why Bank Selection Matters</h4>
+        <p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">Your banking relationship is one of the most important business decisions you'll make. The right bank can accelerate your growth with timely credit, better rates, and strong support. The wrong one can slow you down with delays, rigid processes, and poor service.</p>
+      </div>
+      <div class="detail-section"><h4>Key Evaluation Parameters</h4>
+        <ul class="benefit-list">
+          <li><strong>Interest Rates:</strong> Compare MCLR or Repo-linked rates. Even 0.5% difference on ₹1 crore = ₹50,000/year savings. Ask for the bank's latest rate card.</li>
+          <li><strong>Processing Fees &amp; Charges:</strong> Processing fee (0.5–2%), renewal fee, inspection charges, CIBIL charges, prepayment penalty — these add up. Negotiate.</li>
+          <li><strong>MSME Specialisation:</strong> Banks with dedicated MSME branches / SME finance departments (SBI SME, HDFC Business Banking, Axis SME) offer faster processing and better understanding.</li>
+          <li><strong>Credit Appraisal Speed:</strong> PSU banks: 4–8 weeks typically. Private banks: 2–4 weeks. NBFCs / Fintechs: 3–10 days. Choose based on urgency.</li>
+          <li><strong>Digital Banking:</strong> Robust net banking, mobile app, bulk NEFT/RTGS, API banking for ERPs, auto debit facilities — essential for operational efficiency.</li>
+          <li><strong>Relationship Manager (RM):</strong> A dedicated RM who understands your business is invaluable — for faster renewals, waiver negotiations, and new product access.</li>
+          <li><strong>Trade Finance Capability:</strong> If you import/export, check the bank's LC issuance, forex rates, and FEMA compliance support.</li>
+          <li><strong>Geographic Reach:</strong> For multi-city businesses, ensure the bank has branches near your key locations for operations and collections.</li>
+        </ul>
+      </div>
+      <div class="detail-section"><h4>PSU Banks vs Private Banks vs NBFCs</h4>
+        <div style="overflow-x:auto">
+          <table class="invoice-table" style="font-size:0.85rem">
+            <thead><tr><th>Parameter</th><th>PSU Banks (SBI, PNB, BOB)</th><th>Private Banks (HDFC, ICICI, Axis)</th><th>NBFCs (Bajaj, Tata Capital)</th></tr></thead>
+            <tbody>
+              <tr><td>Interest Rate</td><td>Lowest</td><td>Moderate</td><td>Higher</td></tr>
+              <tr><td>Processing Speed</td><td>Slow (4–8 weeks)</td><td>Fast (2–3 weeks)</td><td>Fastest (days)</td></tr>
+              <tr><td>Collateral Flexibility</td><td>Strict</td><td>Moderate</td><td>Flexible</td></tr>
+              <tr><td>Digital Banking</td><td>Moderate</td><td>Excellent</td><td>Good</td></tr>
+              <tr><td>Govt Scheme Access</td><td>Best (PSBs preferred)</td><td>Good</td><td>Limited</td></tr>
+              <tr><td>Relationship</td><td>Formal</td><td>Better</td><td>Transaction-based</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="info-box" style="margin-top:1rem">
+        <strong>💡 Pro Strategy: Maintain 2 Banks</strong>
+        Keep a PSU bank (SBI / BOB / PNB) for lower-cost credit, government schemes, and LC/BG. Keep a private bank (HDFC / ICICI / Axis) for fast current account operations, digital banking, and quick working capital. This gives you the best of both worlds.
+      </div>
+      <div class="detail-section" style="margin-top:1.5rem"><h4>Questions to Ask Your Bank Before Taking Credit</h4>
+        <ul class="benefit-list">
+          <li>What is the current lending rate (MCLR/Repo + spread)?</li>
+          <li>What is the processing fee and is it negotiable?</li>
+          <li>What are the collateral / security requirements?</li>
+          <li>Is CGTMSE cover available? What is the guarantee fee?</li>
+          <li>What are the renewal charges and how frequently is renewal required?</li>
+          <li>Is there a prepayment penalty? After how many EMIs?</li>
+          <li>Who will be my Relationship Manager?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IEC -->
+<div class="modal-overlay" id="g-iec">
+  <div class="modal" style="position:relative">
+    <div class="modal-header" style="position:relative">
+      <button class="modal-close" onclick="closeModal('g-iec')">✕</button>
+      <h2>📖 Import Export Code (IEC) — Complete Guide</h2>
+      <p>Your Passport to International Trade | DGFT | dgft.gov.in</p>
+    </div>
+    <div class="modal-body">
+      <div class="detail-section"><h4>What is IEC?</h4>
+        <p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">Importer Exporter Code (IEC) is a 10-digit code issued by DGFT (Directorate General of Foreign Trade) that is mandatory for any business or individual engaged in import or export of goods or services from/to India. Without IEC, customs will not clear your shipment and your bank cannot process foreign currency payments.</p>
+      </div>
+      <div class="detail-section"><h4>Who Needs IEC?</h4>
+        <ul class="benefit-list">
+          <li>Any business exporting goods or services from India</li>
+          <li>Any business importing goods into India</li>
+          <li>Service exporters dealing in software, consulting, engineering services</li>
+          <li>Freelancers receiving foreign remittances for services rendered abroad</li>
+          <li><strong>Exemptions:</strong> Government departments, charitable organisations, personal imports for non-commercial use</li>
+        </ul>
+      </div>
+      <div class="detail-section"><h4>Documents Required</h4>
+        <ul class="benefit-list">
+          <li>PAN Card of the firm / company / individual</li>
+          <li>Aadhaar Card / Passport / Voter ID of the applicant</li>
+          <li>Cancelled cheque or bank certificate on bank letterhead</li>
+          <li>Business address proof (utility bill, rent agreement)</li>
+          <li>Digital Photograph of the signatory</li>
+          <li>For companies: Certificate of Incorporation + MOA/AOA</li>
+        </ul>
+      </div>
+      <div class="detail-section"><h4>Step-by-Step IEC Application</h4>
+        <ul class="benefit-list">
+          <li><strong>Step 1:</strong> Visit <a href="https://dgft.gov.in" target="_blank" style="color:var(--saffron)">dgft.gov.in</a> → Services → IEC → Apply for IEC</li>
+          <li><strong>Step 2:</strong> Register/Login with your email and mobile number</li>
+          <li><strong>Step 3:</strong> Fill ANF 2A form: PAN, business type, address, banker details</li>
+          <li><strong>Step 4:</strong> Upload documents and photograph</li>
+          <li><strong>Step 5:</strong> Pay ₹500 application fee online</li>
+          <li><strong>Step 6:</strong> IEC issued within 1–3 working days via email (in most cases, instantly)</li>
+        </ul>
+      </div>
+      <div class="detail-section"><h4>Important Points — Post IEC</h4>
+        <ul class="benefit-list">
+          <li><strong>Annual Update Mandatory:</strong> Update your IEC profile on DGFT portal every year (April–June window), even if no changes. Non-updated IEC gets deactivated.</li>
+          <li><strong>AD Code:</strong> Register your IEC with your bank's AD (Authorised Dealer) Code before your first export. Required for customs clearance at ports.</li>
+          <li><strong>One PAN = One IEC:</strong> Only one IEC per PAN across all business entities.</li>
+          <li><strong>Lifetime Validity:</strong> IEC valid for lifetime (no expiry), but annual update is mandatory.</li>
+        </ul>
+      </div>
+      <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="https://dgft.gov.in" target="_blank" class="btn btn-primary btn-sm">🌐 Apply on DGFT Portal</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FSSAI -->
+<div class="modal-overlay" id="g-fssai">
+  <div class="modal" style="position:relative">
+    <div class="modal-header" style="position:relative">
+      <button class="modal-close" onclick="closeModal('g-fssai')">✕</button>
+      <h2>📖 FSSAI License — Food Safety Registration Guide</h2>
+      <p>Mandatory for All Food Businesses | foscos.fssai.gov.in</p>
+    </div>
+    <div class="modal-body">
+      <div class="detail-section"><h4>What is FSSAI?</h4>
+        <p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">The Food Safety and Standards Authority of India (FSSAI) regulates the manufacture, storage, distribution, sale, and import of food articles in India. Every food business operator (FBO) must be registered or licensed with FSSAI — mandatory for restaurants, food manufacturers, packaged food companies, importers, and distributors.</p>
+      </div>
+      <div class="detail-section"><h4>Three Types of FSSAI License</h4>
+        <div style="overflow-x:auto">
+          <table class="invoice-table" style="font-size:0.85rem">
+            <thead><tr><th>Type</th><th>Annual Turnover / Scale</th><th>Issued by</th><th>Fee</th><th>Validity</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Basic Registration</strong></td><td>Below ₹12 lakh OR petty food business</td><td>Designated Officer</td><td>₹100/year</td><td>1–5 years</td></tr>
+              <tr><td><strong>State License</strong></td><td>₹12 lakh – ₹20 crore turnover</td><td>State Food Safety Commissioner</td><td>₹2,000–₹5,000/year</td><td>1–5 years</td></tr>
+              <tr><td><strong>Central License</strong></td><td>Above ₹20 crore OR multi-state operations</td><td>Central Licensing Authority</td><td>₹7,500/year</td><td>1–5 years</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="detail-section"><h4>Documents Required</h4>
+        <ul class="benefit-list">
+          <li>Photo ID of the food business operator</li>
+          <li>Proof of business address (rent agreement / ownership document)</li>
+          <li>List of food products to be manufactured, stored, or sold</li>
+          <li>Blueprint/layout of processing unit (for manufacturers)</li>
+          <li>List of machinery and equipment</li>
+          <li>Food safety management system (FSMS) plan</li>
+          <li>Certificate of Incorporation / Partnership deed</li>
+          <li>NOC from municipality / panchayat</li>
+        </ul>
+      </div>
+      <div class="detail-section"><h4>Registration Process</h4>
+        <ul class="benefit-list">
+          <li><strong>Step 1:</strong> Visit <a href="https://foscos.fssai.gov.in" target="_blank" style="color:var(--saffron)">foscos.fssai.gov.in</a> → Apply for Registration/License</li>
+          <li><strong>Step 2:</strong> Select appropriate license type based on your turnover and scale</li>
+          <li><strong>Step 3:</strong> Fill Form A (Basic) or Form B (State/Central) with business details</li>
+          <li><strong>Step 4:</strong> Upload documents and pay applicable fee online</li>
+          <li><strong>Step 5:</strong> Inspection may be conducted by food safety officer</li>
+          <li><strong>Step 6:</strong> License issued within 30–60 days (Basic: 7 days)</li>
+        </ul>
+      </div>
+      <div class="detail-section"><h4>Key Compliance Requirements</h4>
+        <ul class="benefit-list">
+          <li>Display FSSAI license number on all food packages and at premises</li>
+          <li>Maintain food safety management records (temperature logs, pest control records)</li>
+          <li>Ensure hygienic conditions and personal hygiene of food handlers</li>
+          <li>Renew license before expiry (apply at least 30 days before expiry)</li>
+          <li>Annual return filing for licensed entities</li>
+        </ul>
+      </div>
+      <div style="margin-top:1.5rem"><a href="https://foscos.fssai.gov.in" target="_blank" class="btn btn-primary btn-sm">🌐 Apply on FOSCOS Portal</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- LEI -->
+<div class="modal-overlay" id="g-lei">
+  <div class="modal" style="position:relative">
+    <div class="modal-header" style="position:relative">
+      <button class="modal-close" onclick="closeModal('g-lei')">✕</button>
+      <h2>📖 LEI — Legal Entity Identifier Guide</h2>
+      <p>Mandatory for Borrowers with ≥₹5 Cr Exposure | leil.in</p>
+    </div>
+    <div class="modal-body">
+      <div class="detail-section"><h4>What is LEI?</h4>
+        <p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">The Legal Entity Identifier (LEI) is a 20-character globally unique alphanumeric code assigned to legal entities participating in financial transactions. It was introduced by the G20/Financial Stability Board post 2008 crisis to improve transparency in global financial markets. In India, the RBI has made it mandatory for corporate borrowers above specified credit thresholds.</p>
+      </div>
+      <div class="detail-section"><h4>Who Needs LEI in India?</h4>
+        <div style="overflow-x:auto">
+          <table class="invoice-table" style="font-size:0.85rem">
+            <thead><tr><th>Aggregate Exposure</th><th>Mandatory Since</th></tr></thead>
+            <tbody>
+              <tr><td>₹50 crore and above</td><td>April 2019</td></tr>
+              <tr><td>₹25 crore and above</td><td>April 2021</td></tr>
+              <tr><td>₹5 crore and above</td><td>April 2023</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.82rem;color:var(--gray-600);margin-top:0.5rem">Aggregate exposure = total fund-based + non-fund-based credit across ALL banks for your entity.</p>
+      </div>
+      <div class="detail-section"><h4>How to Get LEI in India</h4>
+        <ul class="benefit-list">
+          <li>Apply through <strong>LEIL (Legal Entity Identifier India Ltd)</strong> — only accredited LEI issuer in India</li>
+          <li>Visit <a href="https://www.leil.in" target="_blank" style="color:var(--saffron)">leil.in</a> → Register as new user → Fill entity details</li>
+          <li>Documents: PAN, CIN (for companies), address proof, authorised signatory details</li>
+          <li>Fee: ₹2,950 + GST for first year; ₹2,360 + GST for renewal</li>
+          <li>LEI typically issued within 3–5 working days</li>
+          <li><strong>Annual Renewal Mandatory</strong> — expired LEI creates compliance issues with banks</li>
+        </ul>
+      </div>
+      <div class="detail-section"><h4>Consequences of Not Having LEI</h4>
+        <ul class="benefit-list">
+          <li>Bank may refuse loan renewal or fresh disbursement</li>
+          <li>Regulatory non-compliance — banks penalised for lending without LEI verification</li>
+          <li>Trading in certain securities and derivatives not permitted without LEI</li>
+          <li>Large remittances via RBI payment systems may be blocked</li>
+        </ul>
+      </div>
+      <div style="margin-top:1.5rem"><a href="https://www.leil.in" target="_blank" class="btn btn-primary btn-sm">🌐 Get LEI from LEIL</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- INCOME TAX -->
+<div class="modal-overlay" id="g-it">
+  <div class="modal" style="position:relative">
+    <div class="modal-header" style="position:relative">
+      <button class="modal-close" onclick="closeModal('g-it')">✕</button>
+      <h2>📖 Income Tax Guide for MSMEs</h2>
+      <p>Regimes | Presumptive Tax | Filing Deadlines | Key Deductions</p>
+    </div>
+    <div class="modal-body">
+      <div class="detail-section"><h4>Choose Your Tax Regime (FY 2024-25)</h4>
+        <div style="overflow-x:auto">
+          <table class="invoice-table" style="font-size:0.85rem">
+            <thead><tr><th>Income Slab</th><th>Old Regime</th><th>New Regime (Default)</th></tr></thead>
+            <tbody>
+              <tr><td>Up to ₹2.5L / ₹3L</td><td>Nil</td><td>Nil</td></tr>
+              <tr><td>₹2.5L–₹5L / ₹3L–₹7L</td><td>5%</td><td>5%</td></tr>
+              <tr><td>₹5L–₹10L / ₹7L–₹10L</td><td>20%</td><td>10%</td></tr>
+              <tr><td>₹10L–₹12L</td><td>30%</td><td>15%</td></tr>
+              <tr><td>₹12L–₹15L</td><td>30%</td><td>20%</td></tr>
+              <tr><td>Above ₹15L</td><td>30%</td><td>30%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.82rem;color:var(--gray-600);margin-top:0.5rem">Old Regime: All deductions (80C ₹1.5L, HRA, LTA, 80D etc.) available. New Regime: Standard Deduction ₹75,000 for salaried; no other deductions.</p>
+      </div>
+      <div class="detail-section"><h4>Presumptive Taxation — Simplified Option for MSMEs</h4>
+        <ul class="benefit-list">
+          <li><strong>Section 44AD (Businesses):</strong> Turnover up to ₹3 crore → pay tax on 6% (digital receipts) or 8% (cash) of turnover as deemed income. No books of accounts required. No audit.</li>
+          <li><strong>Section 44ADA (Professionals):</strong> Gross receipts up to ₹75 lakh → pay tax on 50% as deemed income. No books required. Applicable for doctors, CAs, lawyers, engineers, architects, consultants.</li>
+          <li>If you opt out of presumptive taxation, you must maintain books AND get audited for 5 subsequent years.</li>
+        </ul>
+      </div>
+      <div class="detail-section"><h4>Advance Tax Due Dates (FY 2025-26)</h4>
+        <div style="overflow-x:auto">
+          <table class="invoice-table" style="font-size:0.85rem">
+            <thead><tr><th>Instalment</th><th>Due Date</th><th>Cumulative % to Pay</th></tr></thead>
+            <tbody>
+              <tr><td>Q1</td><td>15 June 2025</td><td>15% of total estimated tax</td></tr>
+              <tr><td>Q2</td><td>15 September 2025</td><td>45%</td></tr>
+              <tr><td>Q3</td><td>15 December 2025</td><td>75%</td></tr>
+              <tr><td>Q4</td><td>15 March 2026</td><td>100%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.82rem;color:var(--gray-600);margin-top:0.5rem">Interest @ 1% per month payable under Sec 234B/234C for shortfall. 44AD/ADA assessees pay 100% by 15 March.</p>
+      </div>
+      <div class="detail-section"><h4>ITR Filing Deadlines</h4>
+        <ul class="benefit-list">
+          <li>Individuals / Proprietorships (non-audit): 31st July</li>
+          <li>Audit cases (businesses with turnover &gt; ₹1 crore / &gt; ₹50L for professionals): 31st October</li>
+          <li>Companies: 31st October</li>
+          <li>Belated return: 31st December (with penalty)</li>
+        </ul>
+      </div>
+      <div style="margin-top:1.5rem"><a href="https://www.incometax.gov.in" target="_blank" class="btn btn-primary btn-sm">🌐 Income Tax Portal</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- GST COMPOSITION VS REGULAR -->
+<div class="modal-overlay" id="g-gstcomp">
+  <div class="modal" style="position:relative">
+    <div class="modal-header" style="position:relative">
+      <button class="modal-close" onclick="closeModal('g-gstcomp')">✕</button>
+      <h2>📖 GST: Composition vs Regular Scheme</h2>
+      <p>Which GST Scheme is Right for Your MSME?</p>
+    </div>
+    <div class="modal-body">
+      <div class="detail-section"><h4>Side-by-Side Comparison</h4>
+        <div style="overflow-x:auto">
+          <table class="invoice-table" style="font-size:0.85rem">
+            <thead><tr><th>Parameter</th><th>Composition Scheme</th><th>Regular Scheme</th></tr></thead>
+            <tbody>
+              <tr><td>Turnover Limit</td><td>Up to ₹1.5 Crore (goods)</td><td>No limit</td></tr>
+              <tr><td>Services Turnover</td><td>Up to ₹50 lakh (service providers)</td><td>No limit</td></tr>
+              <tr><td>Tax Rate — Manufacturers</td><td>1% of turnover</td><td>Standard GST rate (5/12/18/28%)</td></tr>
+              <tr><td>Tax Rate — Traders</td><td>1% of turnover</td><td>Standard GST rate</td></tr>
+              <tr><td>Tax Rate — Restaurant</td><td>5% of turnover</td><td>5% (no ITC)</td></tr>
+              <tr><td>Tax Rate — Other Services</td><td>6% of turnover</td><td>Standard GST rate</td></tr>
+              <tr><td>Input Tax Credit (ITC)</td><td>❌ Not Available</td><td>✅ Fully Available</td></tr>
+              <tr><td>Inter-State Sales</td><td>❌ Not Allowed</td><td>✅ Allowed (charge IGST)</td></tr>
+              <tr><td>E-Commerce Sales</td><td>❌ Not Allowed</td><td>✅ Allowed</td></tr>
+              <tr><td>Tax Invoice</td><td>Bill of Supply (no tax shown)</td><td>Tax Invoice required</td></tr>
+              <tr><td>Returns</td><td>CMP-08 (quarterly) + GSTR-4 (annual)</td><td>GSTR-1 (monthly) + GSTR-3B (monthly)</td></tr>
+              <tr><td>Compliance Burden</td><td>Very Low</td><td>Moderate to High</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="detail-section"><h4>Choose Composition Scheme If…</h4>
+        <ul class="benefit-list">
+          <li>Annual turnover is below ₹1.5 crore</li>
+          <li>You sell mostly to end consumers (B2C) — not to businesses needing ITC</li>
+          <li>All sales are intra-state (within same state)</li>
+          <li>You don't want to deal with monthly GST returns</li>
+          <li>Your input purchases are minimal (so ITC isn't valuable)</li>
+          <li>You're a small restaurant, retailer, or local service provider</li>
+        </ul>
+      </div>
+      <div class="detail-section"><h4>Choose Regular Scheme If…</h4>
+        <ul class="benefit-list">
+          <li>Turnover exceeds or likely to exceed ₹1.5 crore</li>
+          <li>You sell B2B — your customers need to claim ITC from your invoices</li>
+          <li>You make inter-state sales or sell on e-commerce platforms</li>
+          <li>You have significant input purchases where ITC savings are substantial</li>
+          <li>You plan to export goods or services</li>
+        </ul>
+      </div>
+      <div class="info-box"><strong>💡 Switching Rules:</strong> You can opt for Composition at start of financial year only. To switch from Regular to Composition or vice versa, apply before April each year. If turnover exceeds Composition limit mid-year, you must switch to Regular from the next quarter.</div>
+    </div>
+  </div>
+</div>
+
+<!-- TRADEMARK -->
+<div class="modal-overlay" id="g-tm">
+  <div class="modal" style="position:relative">
+    <div class="modal-header" style="position:relative">
+      <button class="modal-close" onclick="closeModal('g-tm')">✕</button>
+      <h2>📖 Trademark Registration Guide</h2>
+      <p>Protect Your Brand | IP India | ipindia.gov.in</p>
+    </div>
+    <div class="modal-body">
+      <div class="detail-section"><h4>What Can Be Trademarked?</h4><ul class="benefit-list"><li>Business name / brand name</li><li>Logo / device mark</li><li>Tagline / slogan</li><li>Combination of name + logo (composite mark)</li></ul></div>
+      <div class="detail-section"><h4>45 Classes of Trademarks</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">Trademarks are filed under specific classes (1–45 under Nice Classification). You must file in all classes relevant to your business. Filing in multiple classes = multiple fees.</p><ul class="benefit-list"><li>Classes 1–34: Goods (e.g., Class 25 = Clothing, Class 30 = Food)</li><li>Classes 35–45: Services (e.g., Class 35 = Business Services, Class 42 = Software)</li></ul></div>
+      <div class="detail-section"><h4>Process &amp; Timeline</h4><ul class="benefit-list"><li>File application on IP India portal: ipindia.gov.in</li><li>Government fee: ₹4,500 per class (individuals/MSMEs), ₹9,000 (companies)</li><li><strong>Startups &amp; MSMEs: 50% fee concession</strong></li><li>After filing, you get ™ symbol rights immediately</li><li>Examination: 3–6 months. If no objection → published in Trademark Journal</li><li>Opposition window: 4 months from publication</li><li>Registration certificate: 18–36 months typically. Valid for 10 years (renewable)</li></ul></div>
+      <div style="margin-top:1.5rem"><a href="https://tmrsearch.ipindia.gov.in" target="_blank" class="btn btn-primary btn-sm">🔍 Search Existing Trademarks</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- SHOPS ACT -->
+<div class="modal-overlay" id="g-shop">
+  <div class="modal" style="position:relative">
+    <div class="modal-header" style="position:relative">
+      <button class="modal-close" onclick="closeModal('g-shop')">✕</button>
+      <h2>📖 Shops &amp; Establishments Act — Registration Guide</h2>
+      <p>State-Level Registration | All Commercial Establishments</p>
+    </div>
+    <div class="modal-body">
+      <div class="detail-section"><h4>What is Shops &amp; Establishments Act?</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">Every state in India has its own Shops and Establishments Act. Any establishment — shop, office, factory, commercial establishment, restaurant, hotel — must register under this Act within 30 days of commencing business. It governs working hours, employee welfare, leave, and conditions of service.</p></div>
+      <div class="detail-section"><h4>Documents Required</h4><ul class="benefit-list"><li>Business name, address, and nature of work</li><li>Name and residential address of employer</li><li>Number of employees</li><li>PAN of employer</li><li>Proof of business premises</li></ul></div>
+      <div class="detail-section"><h4>Registration Process</h4><ul class="benefit-list"><li>Apply online through your state's Labour Department portal</li><li>Maharashtra: mahakamgar.gov.in | Karnataka: labour.kar.nic.in | Delhi: labour.delhigovt.nic.in</li><li>Pay applicable fee (varies by state and number of employees)</li><li>Certificate issued within 7–15 working days</li><li>Display certificate prominently at business premises</li></ul></div>
+      <div class="detail-section"><h4>Key Obligations</h4><ul class="benefit-list"><li>Working hours: Max 9 hrs/day, 48 hrs/week</li><li>Overtime: Max 10 hrs/day; double rate pay</li><li>Weekly holiday: Minimum 1 day per week</li><li>Leave: Annual earned leave, sick leave as per state rules</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- PF ESI -->
+<div class="modal-overlay" id="g-pfesi">
+  <div class="modal" style="position:relative">
+    <div class="modal-header" style="position:relative">
+      <button class="modal-close" onclick="closeModal('g-pfesi')">✕</button>
+      <h2>📖 PF &amp; ESI Registration Guide</h2>
+      <p>Employee Benefits | EPFO &amp; ESIC Compliance</p>
+    </div>
+    <div class="modal-body">
+      <div class="detail-section"><h4>EPF — Employees' Provident Fund</h4>
+        <div style="overflow-x:auto"><table class="invoice-table" style="font-size:0.85rem">
+          <thead><tr><th>Parameter</th><th>Details</th></tr></thead>
+          <tbody>
+            <tr><td>Applicable When</td><td>20 or more employees</td></tr>
+            <tr><td>Employee Contribution</td><td>12% of Basic + DA</td></tr>
+            <tr><td>Employer Contribution</td><td>12% of Basic + DA (split: 8.33% EPS + 3.67% EPF)</td></tr>
+            <tr><td>Monthly Due Date</td><td>15th of following month</td></tr>
+            <tr><td>Registration Portal</td><td>epfindia.gov.in / unifiedportal-emp.epfindia.gov.in</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="detail-section"><h4>ESI — Employees' State Insurance</h4>
+        <div style="overflow-x:auto"><table class="invoice-table" style="font-size:0.85rem">
+          <thead><tr><th>Parameter</th><th>Details</th></tr></thead>
+          <tbody>
+            <tr><td>Applicable When</td><td>10 or more employees (in factories: all; others: state-wise)</td></tr>
+            <tr><td>Applicable on wages</td><td>Employees earning up to ₹21,000/month</td></tr>
+            <tr><td>Employee Contribution</td><td>0.75% of gross wages</td></tr>
+            <tr><td>Employer Contribution</td><td>3.25% of gross wages</td></tr>
+            <tr><td>Monthly Due Date</td><td>15th of following month</td></tr>
+            <tr><td>Registration Portal</td><td>esic.in / esic.gov.in</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="detail-section"><h4>Benefits Provided</h4><ul class="benefit-list"><li><strong>EPF:</strong> Retirement corpus, pension (EPS), insurance (EDLI up to ₹7 lakh)</li><li><strong>ESI:</strong> Medical care for employee + family, maternity benefit (26 weeks), disability benefit, unemployment allowance</li></ul></div>
+      <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="https://www.epfindia.gov.in" target="_blank" class="btn btn-primary btn-sm">🌐 EPFO Portal</a>
+        <a href="https://www.esic.gov.in" target="_blank" class="btn btn-outline btn-sm" style="color:var(--navy);border-color:var(--gray-300)">🌐 ESIC Portal</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GEM -->
+<div class="modal-overlay" id="g-gem">
+  <div class="modal" style="position:relative">
+    <div class="modal-header" style="position:relative">
+      <button class="modal-close" onclick="closeModal('g-gem')">✕</button>
+      <h2>📖 GeM — Government e-Marketplace Registration</h2>
+      <p>Sell to Government | gem.gov.in | Guaranteed Payment</p>
+    </div>
+    <div class="modal-body">
+      <div class="detail-section"><h4>What is GeM?</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">Government e-Marketplace (GeM) is the national procurement portal through which all Central and State Government departments, PSUs, and autonomous bodies procure goods and services. Selling on GeM gives MSMEs direct access to the government market — India's largest buyer — with payment guaranteed within 10 days of successful delivery.</p></div>
+      <div class="detail-section"><h4>Benefits for MSMEs</h4><ul class="benefit-list">
+        <li>25% procurement reserved for MSEs (Micro and Small Enterprises)</li>
+        <li>Payment within 10 days — guaranteed via GeM payment system</li>
+        <li>No middlemen — direct government-to-business transactions</li>
+        <li>Udyam-linked registration process — simple onboarding</li>
+        <li>₹30,000 crore+ annual procurement on the platform</li>
+        <li>Tender-free direct purchases up to ₹25,000 from MSEs</li>
+      </ul></div>
+      <div class="detail-section"><h4>How to Register on GeM</h4><ul class="benefit-list">
+        <li><strong>Step 1:</strong> Visit <a href="https://gem.gov.in" target="_blank" style="color:var(--saffron)">gem.gov.in</a> → Seller → Sign Up</li>
+        <li><strong>Step 2:</strong> Enter Aadhaar, PAN, and mobile OTP verification</li>
+        <li><strong>Step 3:</strong> Link Udyam Registration number</li>
+        <li><strong>Step 4:</strong> Add bank account (linked to PAN for payment)</li>
+        <li><strong>Step 5:</strong> Create product/service catalogue with HSN/SAC codes, images, specifications</li>
+        <li><strong>Step 6:</strong> Start receiving and fulfilling government purchase orders</li>
+      </ul></div>
+      <div class="detail-section"><h4>Tips for Success on GeM</h4><ul class="benefit-list">
+        <li>Keep pricing competitive — government compares quotes automatically</li>
+        <li>Maintain high seller rating by fulfilling orders on time</li>
+        <li>Upload high-quality product images and detailed specifications</li>
+        <li>Regularly update catalogue and pricing</li>
+        <li>Participate in Bid / RA (Reverse Auction) for bulk orders</li>
+      </ul></div>
+      <div style="margin-top:1.5rem"><a href="https://gem.gov.in" target="_blank" class="btn btn-primary btn-sm">🌐 Register on GeM</a></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-top">
+      <div class="footer-brand"><a href="../index.html" class="navbar-brand"><div class="brand-logo">M</div><span class="brand-text">MSME<span>Hub</span></span></a><p>India's most comprehensive MSME resource platform. Free tools, guides, and expert guidance.</p></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="schemes.html">Govt Schemes</a></li><li><a href="tools.html">Business Tools</a></li><li><a href="guidebook.html">Guidebooks</a></li><li><a href="finance.html">Finance</a></li></ul></div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="tax.html">Tax &amp; Certificates</a></li><li><a href="compliance.html">Compliance</a></li><li><a href="growth.html">Growth</a></li><li><a href="connect.html">Connect</a></li></ul></div>
+      <div class="footer-col"><h4>Official Portals</h4><ul><li><a href="https://udyamregistration.gov.in" target="_blank">Udyam</a></li><li><a href="https://www.gst.gov.in" target="_blank">GST Portal</a></li><li><a href="https://dgft.gov.in" target="_blank">DGFT / IEC</a></li><li><a href="https://gem.gov.in" target="_blank">GeM Portal</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 MSMEHub. For informational purposes only.</span><span>Built for 6.3 Crore Indian MSMEs 🚀</span></div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('hamburger')?.addEventListener('click',()=>document.getElementById('navLinks')?.classList.toggle('open'));
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks')?.classList.remove('open')));
+window.addEventListener('scroll',()=>{const p=document.getElementById('progressBar');if(p)p.style.width=((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100)+'%';});
+function openModal(id){document.getElementById(id)?.classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(id){document.getElementById(id)?.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.modal-overlay').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeModal(m.id);}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal-overlay.open').forEach(m=>closeModal(m.id));});
+</script>
+</body>
+</html>

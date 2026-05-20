@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Government Schemes for MSMEs — MSMEHub</title>
+  <meta name="description" content="All active government schemes for Indian MSMEs — ECLGS, CGTMSE, Startup India, PMEGP, Export Finance and more with eligibility checker.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FF6B00'/><text y='.9em' font-size='70' x='15'>M</text></svg>">
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand">
+    <div class="brand-logo">M</div>
+    <span class="brand-text">MSME<span>Hub</span></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="schemes.html" class="active">Govt Schemes</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="guidebook.html">Guidebook</a></li>
+    <li><a href="finance.html">Finance</a></li>
+    <li><a href="tax.html">Tax &amp; Cert.</a></li>
+    <li><a href="compliance.html">Compliance</a></li>
+    <li><a href="growth.html">Growth</a></li>
+    <li><a href="connect.html" class="nav-cta btn">Connect</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<main class="main-content">
+
+  <!-- PAGE HERO -->
+  <section style="background:linear-gradient(135deg,var(--navy),var(--navy-mid));padding:4rem 2rem 3rem;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 80% 50%,rgba(255,107,0,0.12),transparent 60%)"></div>
+    <div class="container" style="position:relative;z-index:1">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem">
+        <a href="../index.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem">Home</a>
+        <span style="color:rgba(255,255,255,0.3)">›</span>
+        <span style="color:var(--saffron);font-size:0.85rem">Government Schemes</span>
+      </div>
+      <h1 style="font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:white;margin-bottom:0.75rem">Government Schemes for MSMEs</h1>
+      <p style="color:rgba(255,255,255,0.65);max-width:620px;font-size:1rem">All currently active central and state government schemes for Micro, Small & Medium Enterprises — with eligibility checker and official notification links.</p>
+      <div style="display:flex;gap:2rem;margin-top:2rem;flex-wrap:wrap">
+        <div style="text-align:center"><div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--saffron)">50+</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.05em">Active Schemes</div></div>
+        <div style="text-align:center"><div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--saffron)">Free</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.05em">Eligibility Check</div></div>
+        <div style="text-align:center"><div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--saffron)">Official</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.05em">Gazette Links</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- FILTERS -->
+      <div class="filters-row">
+        <div class="filter-group">
+          <label>Industry Type</label>
+          <select id="filterIndustry" class="scheme-filter">
+            <option value="">All Industries</option>
+            <option value="manufacturing">Manufacturing</option>
+            <option value="services">Services</option>
+            <option value="trading">Trading</option>
+            <option value="food">Food Processing</option>
+            <option value="textile">Textile</option>
+            <option value="export">Export</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>State</label>
+          <select id="filterState" class="scheme-filter">
+            <option value="">All States</option>
+            <option value="all">Pan India</option>
+            <option value="mh">Maharashtra</option>
+            <option value="gj">Gujarat</option>
+            <option value="ka">Karnataka</option>
+            <option value="tn">Tamil Nadu</option>
+            <option value="up">Uttar Pradesh</option>
+            <option value="rj">Rajasthan</option>
+            <option value="mp">Madhya Pradesh</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Trade Type</label>
+          <select id="filterTrade" class="scheme-filter">
+            <option value="">All</option>
+            <option value="domestic">Domestic</option>
+            <option value="export">Export/Import</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Beneficiary</label>
+          <select id="filterGender" class="scheme-filter">
+            <option value="">All</option>
+            <option value="women">Women Entrepreneurs</option>
+            <option value="sc-st">SC/ST</option>
+            <option value="general">General</option>
+          </select>
+        </div>
+        <div style="display:flex;align-items:flex-end;gap:0.5rem">
+          <button class="btn btn-outline btn-sm" onclick="clearFilters()" style="color:var(--gray-600);border-color:var(--gray-300)">Clear Filters</button>
+          <div class="view-toggle">
+            <button class="view-btn active" data-view="grid" title="Grid view">⊞</button>
+            <button class="view-btn" data-view="list" title="List view">☰</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="schemeCount" style="font-size:0.85rem;color:var(--gray-600);margin-bottom:1rem">Showing all schemes</div>
+
+      <!-- SCHEMES GRID -->
+      <div class="schemes-grid" id="schemesGrid">
+
+        <!-- 1. ECLGS -->
+        <div class="scheme-card" data-industry="all" data-state="all" data-gender="all" data-trade="all" onclick="openModal('m-eclgs')">
+          <div class="scheme-card-header">
+            <div><div class="scheme-badge">Credit Guarantee</div><h3>Emergency Credit Line Guarantee Scheme (ECLGS)</h3></div>
+          </div>
+          <div class="scheme-card-body">
+            <p>100% guarantee coverage to banks and NBFCs on additional working capital term loans to MSME borrowers. Designed to address post-COVID credit stress.</p>
+            <div class="scheme-tags"><span class="tag green">Active</span><span class="tag">All Industries</span><span class="tag orange">Up to ₹5 Cr</span><span class="tag">No Collateral</span></div>
+          </div>
+          <div class="scheme-card-footer"><span style="font-size:0.82rem;color:var(--gray-400)">Ministry of Finance / NCGTC</span><button class="btn btn-primary btn-sm">View Details →</button></div>
+        </div>
+
+        <!-- 2. CGTMSE -->
+        <div class="scheme-card" data-industry="all" data-state="all" data-gender="all" data-trade="all" onclick="openModal('m-cgtmse')">
+          <div class="scheme-card-header">
+            <div><div class="scheme-badge">Credit Guarantee</div><h3>CGTMSE — Collateral Free Credit for MSEs</h3></div>
+          </div>
+          <div class="scheme-card-body">
+            <p>Collateral-free and third-party guarantee-free credit for micro and small enterprises up to ₹5 crore through 100+ Member Lending Institutions.</p>
+            <div class="scheme-tags"><span class="tag green">Active</span><span class="tag">Micro &amp; Small</span><span class="tag orange">Up to ₹5 Cr</span><span class="tag">75–85% Cover</span></div>
+          </div>
+          <div class="scheme-card-footer"><span style="font-size:0.82rem;color:var(--gray-400)">MSME Ministry + SIDBI</span><button class="btn btn-primary btn-sm">View Details →</button></div>
+        </div>
+
+        <!-- 3. Startup India -->
+        <div class="scheme-card" data-industry="all" data-state="all" data-gender="all" data-trade="all" onclick="openModal('m-startup')">
+          <div class="scheme-card-header">
+            <div><div class="scheme-badge">Startup Support</div><h3>Startup India Initiative</h3></div>
+          </div>
+          <div class="scheme-card-body">
+            <p>Tax exemptions for 3 years, faster patent process, self-certification under 9 labour/environment laws, and access to Fund of Funds for DPIIT-recognised startups.</p>
+            <div class="scheme-tags"><span class="tag green">Active</span><span class="tag">All Sectors</span><span class="tag orange">Tax Benefits</span><span class="tag">3-yr Exemption</span></div>
+          </div>
+          <div class="scheme-card-footer"><span style="font-size:0.82rem;color:var(--gray-400)">DPIIT, GoI</span><button class="btn btn-primary btn-sm">View Details →</button></div>
+        </div>
+
+        <!-- 4. PMEGP -->
+        <div class="scheme-card" data-industry="manufacturing" data-state="all" data-gender="all" data-trade="domestic" onclick="openModal('m-pmegp')">
+          <div class="scheme-card-header">
+            <div><div class="scheme-badge">Employment Generation</div><h3>PM Employment Generation Programme (PMEGP)</h3></div>
+          </div>
+          <div class="scheme-card-body">
+            <p>Margin money subsidy of 15–35% for setting up new micro enterprises. Manufacturing up to ₹50 lakh, Services up to ₹20 lakh. Special rates for SC/ST and women.</p>
+            <div class="scheme-tags"><span class="tag green">Active</span><span class="tag">New Enterprises</span><span class="tag orange">15–35% Subsidy</span></div>
+          </div>
+          <div class="scheme-card-footer"><span style="font-size:0.82rem;color:var(--gray-400)">KVIC / MSME Ministry</span><button class="btn btn-primary btn-sm">View Details →</button></div>
+        </div>
+
+        <!-- 5. Export Finance Interest Subvention -->
+        <div class="scheme-card" data-industry="export" data-state="all" data-gender="all" data-trade="export" onclick="openModal('m-export')">
+          <div class="scheme-card-header">
+            <div><div class="scheme-badge">Export Finance</div><h3>Export Finance Interest Subvention</h3></div>
+          </div>
+          <div class="scheme-card-body">
+            <p>3% interest subvention on pre and post-shipment rupee export credit for MSMEs. Makes export credit significantly more affordable for small exporters.</p>
+            <div class="scheme-tags"><span class="tag green">Active</span><span class="tag">Exporters</span><span class="tag orange">3% Subvention</span></div>
+          </div>
+          <div class="scheme-card-footer"><span style="font-size:0.82rem;color:var(--gray-400)">Ministry of Commerce</span><button class="btn btn-primary btn-sm">View Details →</button></div>
+        </div>
+
+        <!-- 6. PMLUPY -->
+        <div class="scheme-card" data-industry="all" data-state="all" data-gender="all" data-trade="all" onclick="openModal('m-pmlupy')">
+          <div class="scheme-card-header">
+            <div><div class="scheme-badge">Micro Enterprise</div><h3>PM Laghu Udhyog Prasaran Yojana (PMLUPY)</h3></div>
+          </div>
+          <div class="scheme-card-body">
+            <p>Concessional credit to micro enterprises with focus on first-generation entrepreneurs. Handholding support and linkage with complementary government schemes.</p>
+            <div class="scheme-tags"><span class="tag green">Active</span><span class="tag">Micro Only</span><span class="tag orange">Concessional Rate</span></div>
+          </div>
+          <div class="scheme-card-footer"><span style="font-size:0.82rem;color:var(--gray-400)">MSME Ministry</span><button class="btn btn-primary btn-sm">View Details →</button></div>
+        </div>
+
+        <!-- 7. GIFT City -->
+        <div class="scheme-card" data-industry="all" data-state="gj" data-gender="all" data-trade="all" onclick="openModal('m-gift')">
+          <div class="scheme-card-header">
+            <div><div class="scheme-badge">Special Zone</div><h3>GIFT City — IFSC Financial Hub</h3></div>
+          </div>
+          <div class="scheme-card-body">
+            <p>Gujarat International Finance Tec-City offers 100% tax exemption for 10 years, relaxed FEMA norms, no GST on IFSC transactions, and access to global capital.</p>
+            <div class="scheme-tags"><span class="tag green">Active</span><span class="tag">Gujarat</span><span class="tag orange">100% Tax Exempt</span></div>
+          </div>
+          <div class="scheme-card-footer"><span style="font-size:0.82rem;color:var(--gray-400)">IFSCA / Gujarat Govt</span><button class="btn btn-primary btn-sm">View Details →</button></div>
+        </div>
+
+        <!-- 8. Women Entrepreneurs -->
+        <div class="scheme-card" data-industry="all" data-state="all" data-gender="women" data-trade="all" onclick="openModal('m-women')">
+          <div class="scheme-card-header">
+            <div><div class="scheme-badge">Women Entrepreneur</div><h3>Udyogini / Stree Shakti Package</h3></div>
+          </div>
+          <div class="scheme-card-body">
+            <p>Subsidised and collateral-free loans for women-led MSMEs. Interest rate concession of 0.05–0.5%, enhanced CGTMSE coverage (80%), handholding support.</p>
+            <div class="scheme-tags"><span class="tag green">Active</span><span class="tag">Women Only</span><span class="tag orange">0.5% Concession</span></div>
+          </div>
+          <div class="scheme-card-footer"><span style="font-size:0.82rem;color:var(--gray-400)">Banks / MSME Ministry</span><button class="btn btn-primary btn-sm">View Details →</button></div>
+        </div>
+
+        <!-- 9. MUDRA -->
+        <div class="scheme-card" data-industry="all" data-state="all" data-gender="all" data-trade="domestic" onclick="openModal('m-mudra')">
+          <div class="scheme-card-header">
+            <div><div class="scheme-badge">Micro Finance</div><h3>PM Mudra Yojana (PMMY)</h3></div>
+          </div>
+          <div class="scheme-card-body">
+            <p>Collateral-free loans under Shishu (up to ₹50K), Kishore (₹50K–₹5L), and Tarun (₹5L–₹10L) for non-farm income generating micro enterprises.</p>
+            <div class="scheme-tags"><span class="tag green">Active</span><span class="tag">Micro Business</span><span class="tag orange">Up to ₹10 Lakh</span></div>
+          </div>
+          <div class="scheme-card-footer"><span style="font-size:0.82rem;color:var(--gray-400)">MUDRA / All Banks</span><button class="btn btn-primary btn-sm">View Details →</button></div>
+        </div>
+
+        <!-- 10. NSIC -->
+        <div class="scheme-card" data-industry="manufacturing" data-state="all" data-gender="all" data-trade="domestic" onclick="openModal('m-nsic')">
+          <div class="scheme-card-header">
+            <div><div class="scheme-badge">Marketing Support</div><h3>NSIC Schemes — Marketing &amp; Technology Support</h3></div>
+          </div>
+          <div class="scheme-card-body">
+            <p>National Small Industries Corporation provides Single Point Registration for GeM/government procurement, raw material assistance, and technology support to MSMEs.</p>
+            <div class="scheme-tags"><span class="tag green">Active</span><span class="tag">Manufacturing</span><span class="tag orange">Govt Procurement</span></div>
+          </div>
+          <div class="scheme-card-footer"><span style="font-size:0.82rem;color:var(--gray-400)">NSIC / MSME Ministry</span><button class="btn btn-primary btn-sm">View Details →</button></div>
+        </div>
+
+        <!-- 11. ZED -->
+        <div class="scheme-card" data-industry="manufacturing" data-state="all" data-gender="all" data-trade="all" onclick="openModal('m-zed')">
+          <div class="scheme-card-header">
+            <div><div class="scheme-badge">Quality Upgrade</div><h3>ZED Certification (Zero Defect Zero Effect)</h3></div>
+          </div>
+          <div class="scheme-card-body">
+            <p>Quality and sustainability certification for MSMEs with subsidy of 80% (micro), 60% (small), 50% (medium) on certification cost. Enhances export competitiveness.</p>
+            <div class="scheme-tags"><span class="tag green">Active</span><span class="tag">Manufacturing</span><span class="tag orange">Up to 80% Subsidy</span></div>
+          </div>
+          <div class="scheme-card-footer"><span style="font-size:0.82rem;color:var(--gray-400)">QCI / MSME Ministry</span><button class="btn btn-primary btn-sm">View Details →</button></div>
+        </div>
+
+        <!-- 12. CLCSS -->
+        <div class="scheme-card" data-industry="manufacturing" data-state="all" data-gender="all" data-trade="all" onclick="openModal('m-clcss')">
+          <div class="scheme-card-header">
+            <div><div class="scheme-badge">Technology Upgrade</div><h3>Credit Linked Capital Subsidy Scheme (CLCSS)</h3></div>
+          </div>
+          <div class="scheme-card-body">
+            <p>15% capital subsidy on institutional credit up to ₹1 crore for technology upgrade of plant and machinery in small enterprises for 51 specified sub-sectors.</p>
+            <div class="scheme-tags"><span class="tag green">Active</span><span class="tag">Small Enterprises</span><span class="tag orange">15% Subsidy</span></div>
+          </div>
+          <div class="scheme-card-footer"><span style="font-size:0.82rem;color:var(--gray-400)">MSME Ministry / SIDBI</span><button class="btn btn-primary btn-sm">View Details →</button></div>
+        </div>
+
+      </div><!-- /schemes-grid -->
+    </div>
+  </section>
+</main>
+
+<!-- ═══════ MODALS ═══════ -->
+
+<!-- ECLGS -->
+<div class="modal-overlay" id="m-eclgs">
+  <div class="modal" style="position:relative">
+    <div class="modal-header" style="position:relative">
+      <button class="modal-close" onclick="closeModal('m-eclgs')">✕</button>
+      <div class="scheme-badge" style="margin-bottom:0.75rem">Credit Guarantee • Ministry of Finance</div>
+      <h2>Emergency Credit Line Guarantee Scheme (ECLGS)</h2>
+      <p>100% Guarantee Coverage | No Collateral | Up to ₹5 Crore</p>
+    </div>
+    <div class="modal-body">
+      <div class="detail-section"><h4>About the Scheme</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">ECLGS was launched as part of Aatmanirbhar Bharat package to provide guaranteed credit to MSMEs impacted by economic stress. It enables banks and NBFCs to provide additional credit without taking fresh collateral, with NCGTC (National Credit Guarantee Trustee Company) providing 100% guarantee coverage.</p></div>
+      <div class="detail-section"><h4>Key Benefits</h4><ul class="benefit-list">
+        <li>Additional working capital term loan of up to 20% of outstanding credit as of 29 Feb 2020</li>
+        <li>Maximum loan cap: ₹5 crore per borrower</li>
+        <li>Interest rate capped: 9.25% p.a. (banks), 14% p.a. (NBFCs)</li>
+        <li>No processing fee or guarantee fee on borrower</li>
+        <li>12-month moratorium on principal repayment</li>
+        <li>4-year overall repayment tenure</li>
+        <li>No fresh collateral required</li>
+      </ul></div>
+      <div class="detail-section"><h4>Eligibility</h4><ul class="benefit-list">
+        <li>MSME / Business enterprise with credit outstanding ≤ ₹50 crore as of 29 Feb 2020</li>
+        <li>Account should be Standard (not NPA) as on 29 Feb 2020</li>
+        <li>Udyam Registration beneficial; GST registration preferred</li>
+        <li>Individual loans for business purposes also covered up to ₹50 crore</li>
+        <li>Hospitality, travel, leisure, and sports sectors: separate sub-scheme available</li>
+      </ul></div>
+      <div class="eligibility-form" id="eligForm_eclgs">
+        <h4>🔍 Eligibility Checker</h4>
+        <div class="q-grid">
+          <div class="form-group"><label>Udyam Registration?</label><select class="form-input" name="udyam"><option value="">Select</option><option value="yes">Yes</option><option value="no">No</option></select></div>
+          <div class="form-group"><label>Outstanding Credit (₹ Crore) as Feb 2020</label><select class="form-input" name="outstanding"><option value="">Select</option><option value="below50">Below ₹50 Cr</option><option value="above50">Above ₹50 Cr</option></select></div>
+          <div class="form-group"><label>Annual Turnover (₹ Lakhs)</label><input class="form-input" type="number" name="turnover" placeholder="e.g. 150"></div>
+          <div class="form-group"><label>Account Status</label><select class="form-input" name="accstatus"><option value="">Select</option><option value="standard">Standard / Regular</option><option value="npa">NPA</option></select></div>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="checkEligibility('eclgs')">Check Eligibility</button>
+        <div class="eligibility-result" id="eligResult_eclgs"><h4></h4><p></p></div>
+      </div>
+      <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="https://msme.gov.in/eclgs" target="_blank" class="btn btn-primary btn-sm">📄 Official Notification</a>
+        <a href="https://www.ncgtc.in/eclgs" target="_blank" class="btn btn-outline btn-sm" style="color:var(--navy);border-color:var(--gray-300)">🌐 NCGTC Portal</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CGTMSE -->
+<div class="modal-overlay" id="m-cgtmse">
+  <div class="modal" style="position:relative">
+    <div class="modal-header" style="position:relative">
+      <button class="modal-close" onclick="closeModal('m-cgtmse')">✕</button>
+      <div class="scheme-badge" style="margin-bottom:0.75rem">Credit Guarantee • MSME Ministry + SIDBI</div>
+      <h2>CGTMSE — Credit Guarantee Fund Trust for MSEs</h2>
+      <p>Collateral Free | Third Party Guarantee Free | Up to ₹5 Crore</p>
+    </div>
+    <div class="modal-body">
+      <div class="detail-section"><h4>About the Scheme</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">CGTMSE was set up jointly by the Government of India and SIDBI to provide guarantee to Member Lending Institutions (MLIs) for credit extended to MSEs without any collateral or third-party guarantee. This enables MSEs — especially first-generation entrepreneurs without assets — to access formal credit.</p></div>
+      <div class="detail-section"><h4>Coverage Guarantee Levels</h4>
+        <div style="overflow-x:auto"><table class="invoice-table" style="font-size:0.85rem">
+          <thead><tr><th>Category</th><th>Max Guarantee Coverage</th></tr></thead>
+          <tbody>
+            <tr><td>Micro Enterprises (up to ₹5L)</td><td>85%</td></tr>
+            <tr><td>Women Entrepreneurs</td><td>80%</td></tr>
+            <tr><td>NE Region / ZED Certified</td><td>80%</td></tr>
+            <tr><td>General (above ₹50L)</td><td>75%</td></tr>
+            <tr><td>All categories — max credit</td><td>₹5 Crore</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="detail-section"><h4>Eligibility</h4><ul class="benefit-list">
+        <li>Micro or Small Enterprise only (not Medium)</li>
+        <li>Valid Udyam Registration mandatory</li>
+        <li>Account must be Standard (not NPA)</li>
+        <li>New and existing businesses both eligible</li>
+        <li>Retail trade, educational institutions, SHGs, agricultural activities: not eligible</li>
+      </ul></div>
+      <div class="eligibility-form" id="eligForm_cgtmse">
+        <h4>🔍 Eligibility Checker</h4>
+        <div class="q-grid">
+          <div class="form-group"><label>Enterprise Type</label><select class="form-input"><option value="">Select</option><option>Micro</option><option>Small</option><option>Medium (not eligible)</option></select></div>
+          <div class="form-group"><label>Udyam Registration?</label><select class="form-input" name="udyam"><option value="">Select</option><option value="yes">Yes</option><option value="no">No</option></select></div>
+          <div class="form-group"><label>Turnover (₹ Crore)</label><input class="form-input" type="number" name="turnover" placeholder="e.g. 5"></div>
+          <div class="form-group"><label>Loan Required (₹ Lakh)</label><input class="form-input" type="number" placeholder="e.g. 50"></div>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="checkEligibility('cgtmse')">Check Eligibility</button>
+        <div class="eligibility-result" id="eligResult_cgtmse"><h4></h4><p></p></div>
+      </div>
+      <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="https://www.cgtmse.in" target="_blank" class="btn btn-primary btn-sm">📄 Official CGTMSE Portal</a>
+        <a href="https://www.cgtmse.in/Download/CGTMSE_Scheme_Document.pdf" target="_blank" class="btn btn-outline btn-sm" style="color:var(--navy);border-color:var(--gray-300)">📥 Scheme Document</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Startup India -->
+<div class="modal-overlay" id="m-startup">
+  <div class="modal" style="position:relative">
+    <div class="modal-header" style="position:relative">
+      <button class="modal-close" onclick="closeModal('m-startup')">✕</button>
+      <div class="scheme-badge" style="margin-bottom:0.75rem">Startup Support • DPIIT</div>
+      <h2>Startup India Initiative</h2>
+      <p>Tax Benefits | Self-Certification | Fund Access | Easy Wind-up</p>
+    </div>
+    <div class="modal-body">
+      <div class="detail-section"><h4>DPIIT Recognition Benefits</h4><ul class="benefit-list">
+        <li>Income Tax exemption for 3 consecutive years out of first 10 years (Sec 80-IAC)</li>
+        <li>Capital Gains Tax exemption on investments (Sec 54EE) up to ₹50 lakh</li>
+        <li>Self-certification under 9 environmental and labour laws for 3–5 years</li>
+        <li>Fast-track patent application — 80% rebate on patent fees</li>
+        <li>80% rebate on trademark fees</li>
+        <li>Access to Fund of Funds (₹10,000 crore SIDBI managed)</li>
+        <li>Government procurement: no prior turnover requirement</li>
+        <li>Wind-up business within 90 days under IBC</li>
+      </ul></div>
+      <div class="detail-section"><h4>Eligibility for DPIIT Recognition</h4><ul class="benefit-list">
+        <li>Incorporated as: Private Ltd Company, LLP, or Registered Partnership Firm</li>
+        <li>Age: Not more than 10 years from date of incorporation</li>
+        <li>Annual turnover: Not exceeding ₹100 crore in any previous financial year</li>
+        <li>Nature: Must be working towards innovation, development, deployment, or commercialisation of new products/services/processes driven by technology or intellectual property</li>
+        <li>Not formed by splitting or reconstructing an existing business</li>
+      </ul></div>
+      <div class="detail-section"><h4>How to Apply</h4><ul class="benefit-list">
+        <li>Visit startupindia.gov.in → Sign up → Apply for DPIIT Recognition</li>
+        <li>Fill application with company details, sector, and problem statement</li>
+        <li>Upload incorporation certificate and brief description of innovation</li>
+        <li>Recognition granted within 2–5 working days (mostly)</li>
+      </ul></div>
+      <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="https://www.startupindia.gov.in" target="_blank" class="btn btn-primary btn-sm">🌐 Apply on Startup India</a>
+        <a href="https://dipp.gov.in/sites/default/files/StartupNotification.pdf" target="_blank" class="btn btn-outline btn-sm" style="color:var(--navy);border-color:var(--gray-300)">📥 Official Gazette</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PMEGP -->
+<div class="modal-overlay" id="m-pmegp">
+  <div class="modal" style="position:relative">
+    <div class="modal-header" style="position:relative">
+      <button class="modal-close" onclick="closeModal('m-pmegp')">✕</button>
+      <div class="scheme-badge" style="margin-bottom:0.75rem">Employment Generation • KVIC</div>
+      <h2>PM Employment Generation Programme (PMEGP)</h2>
+      <p>15–35% Margin Money Subsidy | New Micro Enterprises</p>
+    </div>
+    <div class="modal-body">
+      <div class="detail-section"><h4>About PMEGP</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">PMEGP is a credit-linked subsidy programme for setting up new micro enterprises in manufacturing and service sectors. The margin money (subsidy) is provided upfront and does not need to be repaid. It's implemented through KVIC, KVIBs, and District Industries Centres.</p></div>
+      <div class="detail-section"><h4>Project & Subsidy Limits</h4>
+        <div style="overflow-x:auto"><table class="invoice-table" style="font-size:0.85rem">
+          <thead><tr><th>Sector</th><th>Max Project Cost</th><th>General (Urban)</th><th>General (Rural)</th><th>Special Category</th></tr></thead>
+          <tbody>
+            <tr><td>Manufacturing</td><td>₹50 Lakh</td><td>15%</td><td>25%</td><td>35%</td></tr>
+            <tr><td>Services / Trading</td><td>₹20 Lakh</td><td>15%</td><td>25%</td><td>35%</td></tr>
+          </tbody>
+        </table></div>
+        <p style="font-size:0.82rem;color:var(--gray-600);margin-top:0.5rem">Special Category: SC/ST, Women, Ex-servicemen, PWD, NE Region, Hill/Border areas, Minorities</p>
+      </div>
+      <div class="detail-section"><h4>Eligibility</h4><ul class="benefit-list">
+        <li>Any individual above 18 years of age</li>
+        <li>Minimum 8th pass for projects above ₹10 lakh (mfg) / ₹5 lakh (services)</li>
+        <li>Only new projects — existing units not eligible</li>
+        <li>Self Help Groups (including BPL), charitable trusts, co-operative societies also eligible</li>
+        <li>Applicant must contribute 5–10% as own contribution</li>
+      </ul></div>
+      <div class="detail-section"><h4>How to Apply</h4><ul class="benefit-list">
+        <li>Visit kviconline.gov.in/pmegpeportal</li>
+        <li>Fill online application with business plan</li>
+        <li>Submit to nearby KVIB/KVIC/DIC office</li>
+        <li>Attend EDP (Entrepreneurship Development Programme) training</li>
+        <li>Bank sanctions loan; subsidy transferred to loan account</li>
+      </ul></div>
+      <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="https://www.kviconline.gov.in/pmegpeportal/pmegpweb/jsp/pmegp.jsp" target="_blank" class="btn btn-primary btn-sm">🌐 Apply on PMEGP Portal</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Export Finance -->
+<div class="modal-overlay" id="m-export">
+  <div class="modal" style="position:relative">
+    <div class="modal-header" style="position:relative">
+      <button class="modal-close" onclick="closeModal('m-export')">✕</button>
+      <div class="scheme-badge" style="margin-bottom:0.75rem">Export Finance • Ministry of Commerce</div>
+      <h2>Export Finance Interest Subvention Scheme</h2>
+      <p>3% Interest Subvention on Pre & Post Shipment Credit</p>
+    </div>
+    <div class="modal-body">
+      <div class="detail-section"><h4>About the Scheme</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">MSMEs engaged in exports receive 3% subvention (reduction) in their interest rate on export credit in Indian Rupees. This is provided on both pre-shipment credit (Packing Credit) and post-shipment credit. Banks claim reimbursement from ECGC/RBI on quarterly basis.</p></div>
+      <div class="detail-section"><h4>What is Pre & Post Shipment Credit?</h4><ul class="benefit-list">
+        <li><strong>Pre-shipment (Packing Credit):</strong> Short-term credit given to exporters before goods are shipped, to buy raw materials, manufacture, and pack goods</li>
+        <li><strong>Post-shipment:</strong> Credit against documents sent for collection after shipment; funds given against shipping bill and BoL</li>
+      </ul></div>
+      <div class="detail-section"><h4>Eligibility</h4><ul class="benefit-list">
+        <li>Valid Udyam Registration as MSME</li>
+        <li>Active IEC from DGFT</li>
+        <li>Export credit availed from a scheduled commercial bank</li>
+        <li>Account must be regular/Standard</li>
+        <li>Export must be of physical goods (not all service exports covered)</li>
+      </ul></div>
+      <div style="margin-top:1.5rem"><a href="https://commerce.gov.in" target="_blank" class="btn btn-primary btn-sm">🌐 Ministry of Commerce</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- Remaining scheme modals (short form) -->
+<div class="modal-overlay" id="m-pmlupy"><div class="modal" style="position:relative"><div class="modal-header" style="position:relative"><button class="modal-close" onclick="closeModal('m-pmlupy')">✕</button><div class="scheme-badge" style="margin-bottom:0.75rem">Micro Enterprise</div><h2>PM Laghu Udhyog Prasaran Yojana</h2><p>Concessional Credit for Micro Enterprises</p></div><div class="modal-body"><div class="detail-section"><h4>Key Benefits</h4><ul class="benefit-list"><li>Concessional rate credit to micro enterprises</li><li>Priority to first-generation and unserved entrepreneurs</li><li>Integration with CGTMSE for collateral-free loans</li><li>Handholding and mentoring support through DICs</li><li>Linkage with Udyam, PMEGP, and other schemes</li></ul></div><div class="detail-section"><h4>Eligibility</h4><ul class="benefit-list"><li>Udyam Registered Micro Enterprise</li><li>New or existing micro businesses</li><li>Priority to SC/ST, women, and rural enterprises</li></ul></div><div style="margin-top:1.5rem"><a href="https://msme.gov.in" target="_blank" class="btn btn-primary btn-sm">🌐 MSME Ministry</a></div></div></div></div>
+
+<div class="modal-overlay" id="m-gift"><div class="modal" style="position:relative"><div class="modal-header" style="position:relative"><button class="modal-close" onclick="closeModal('m-gift')">✕</button><div class="scheme-badge" style="margin-bottom:0.75rem">Special Zone • IFSCA</div><h2>GIFT City — International Financial Services Centre</h2><p>Tax Incentives for International Financial Business</p></div><div class="modal-body"><div class="detail-section"><h4>Key Tax Benefits</h4><ul class="benefit-list"><li>100% income tax exemption for any 10 years out of 15 consecutive years</li><li>No GST on transactions within IFSC</li><li>No Securities Transaction Tax (STT) on transactions</li><li>Relaxed FEMA regulations — foreign currency transactions freely allowed</li><li>Low stamp duty</li><li>MAT / AMT: 9% for IFSC units (vs 15% normal)</li></ul></div><div class="detail-section"><h4>Eligible Activities</h4><ul class="benefit-list"><li>Banking, insurance, capital markets, fund management</li><li>Global In-house Centres (GIC)</li><li>Ship leasing</li><li>Aircraft leasing</li><li>Fintech and trading companies</li></ul></div><div style="margin-top:1.5rem"><a href="https://ifsca.gov.in" target="_blank" class="btn btn-primary btn-sm">🌐 IFSCA Portal</a></div></div></div></div>
+
+<div class="modal-overlay" id="m-women"><div class="modal" style="position:relative"><div class="modal-header" style="position:relative"><button class="modal-close" onclick="closeModal('m-women')">✕</button><div class="scheme-badge" style="margin-bottom:0.75rem">Women Entrepreneur</div><h2>Women MSME Schemes — Udyogini &amp; Stree Shakti</h2><p>Special Credit Benefits for Women-Led Businesses</p></div><div class="modal-body"><div class="detail-section"><h4>Available Benefits</h4><ul class="benefit-list"><li>0.05–0.5% concession in interest rate for women entrepreneurs</li><li>Enhanced CGTMSE coverage: 80% vs 75% for others</li><li>SBI Stree Shakti: loans up to ₹50 lakh at 0.50% lower rate if women hold ≥50% stake and attend EDP</li><li>Udyogini Scheme (State): up to ₹3 lakh collateral-free for specific sectors</li><li>Priority allotment in government parks and industrial clusters</li><li>SIDBI Mahila Udyam Nidhi: up to ₹10 lakh for new enterprises</li></ul></div><div class="detail-section"><h4>Eligibility</h4><ul class="benefit-list"><li>Women owning minimum 51% stake in the enterprise</li><li>Udyam Registration in the woman's name</li><li>EDP (Entrepreneurship Development Programme) completion may be required for some banks</li></ul></div></div></div></div>
+
+<div class="modal-overlay" id="m-mudra"><div class="modal" style="position:relative"><div class="modal-header" style="position:relative"><button class="modal-close" onclick="closeModal('m-mudra')">✕</button><div class="scheme-badge" style="margin-bottom:0.75rem">Micro Finance • MUDRA</div><h2>PM Mudra Yojana (PMMY)</h2><p>Collateral-Free Loans up to ₹10 Lakh for Micro Businesses</p></div><div class="modal-body"><div class="detail-section"><h4>Loan Categories</h4><div style="overflow-x:auto"><table class="invoice-table" style="font-size:0.85rem"><thead><tr><th>Category</th><th>Loan Limit</th><th>For</th></tr></thead><tbody><tr><td>Shishu</td><td>Up to ₹50,000</td><td>Business starting up / very early stage</td></tr><tr><td>Kishore</td><td>₹50,001 – ₹5 Lakh</td><td>Established business seeking expansion</td></tr><tr><td>Tarun</td><td>₹5 Lakh – ₹10 Lakh</td><td>Larger micro business needing upgrade</td></tr></tbody></table></div></div><div class="detail-section"><h4>Eligibility</h4><ul class="benefit-list"><li>Non-farm income generating micro enterprise</li><li>Individuals, proprietorships, partnership firms, small companies</li><li>No collateral required (Mudra Card issued for working capital)</li><li>Available from all scheduled commercial banks, RRBs, MFIs, NBFCs</li></ul></div><div style="margin-top:1.5rem"><a href="https://www.mudra.org.in" target="_blank" class="btn btn-primary btn-sm">🌐 MUDRA Portal</a></div></div></div></div>
+
+<div class="modal-overlay" id="m-nsic"><div class="modal" style="position:relative"><div class="modal-header" style="position:relative"><button class="modal-close" onclick="closeModal('m-nsic')">✕</button><div class="scheme-badge" style="margin-bottom:0.75rem">Marketing Support • NSIC</div><h2>NSIC Schemes — Marketing &amp; Technology Support</h2><p>Government Procurement | Raw Material | Technology</p></div><div class="modal-body"><div class="detail-section"><h4>Key NSIC Services</h4><ul class="benefit-list"><li><strong>Single Point Registration (SPRS):</strong> Register under NSIC for government stores purchase programme — get exemption from Earnest Money Deposit and relaxation in criteria</li><li><strong>Raw Material Assistance:</strong> Finance for procurement of raw materials — domestic and imported</li><li><strong>Technology Centre:</strong> Subsidised testing, tool rooms, product design assistance</li><li><strong>GeM Support:</strong> Help in onboarding and selling on Government e-Marketplace</li></ul></div><div style="margin-top:1.5rem"><a href="https://www.nsic.co.in" target="_blank" class="btn btn-primary btn-sm">🌐 NSIC Portal</a></div></div></div></div>
+
+<div class="modal-overlay" id="m-zed"><div class="modal" style="position:relative"><div class="modal-header" style="position:relative"><button class="modal-close" onclick="closeModal('m-zed')">✕</button><div class="scheme-badge" style="margin-bottom:0.75rem">Quality Upgrade • QCI</div><h2>ZED — Zero Defect Zero Effect Certification</h2><p>Up to 80% Subsidy on Certification | Export Quality Boost</p></div><div class="modal-body"><div class="detail-section"><h4>ZED Subsidy on Certification</h4><div style="overflow-x:auto"><table class="invoice-table" style="font-size:0.85rem"><thead><tr><th>Enterprise Type</th><th>Subsidy</th></tr></thead><tbody><tr><td>Micro Enterprise</td><td>80% of certification cost</td></tr><tr><td>Small Enterprise</td><td>60% of certification cost</td></tr><tr><td>Medium Enterprise</td><td>50% of certification cost</td></tr></tbody></table></div></div><div class="detail-section"><h4>Benefits</h4><ul class="benefit-list"><li>Improved quality processes — reduces defects and waste</li><li>Enhanced export competitiveness</li><li>Access to premium customers (defence, aerospace, auto OEMs)</li><li>Additional 0.5% interest concession from banks for ZED certified</li></ul></div><div style="margin-top:1.5rem"><a href="https://zed.org.in" target="_blank" class="btn btn-primary btn-sm">🌐 ZED Portal</a></div></div></div></div>
+
+<div class="modal-overlay" id="m-clcss"><div class="modal" style="position:relative"><div class="modal-header" style="position:relative"><button class="modal-close" onclick="closeModal('m-clcss')">✕</button><div class="scheme-badge" style="margin-bottom:0.75rem">Technology Upgrade • MSME Ministry</div><h2>Credit Linked Capital Subsidy Scheme (CLCSS)</h2><p>15% Capital Subsidy on Technology Upgradation</p></div><div class="modal-body"><div class="detail-section"><h4>About CLCSS</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">CLCSS facilitates technology upgrade in small enterprises by providing 15% upfront capital subsidy on institutional credit up to ₹1 crore for purchase of new plant and machinery. Covers 51 specified sub-sectors ranging from food processing to auto components.</p></div><div class="detail-section"><h4>Key Features</h4><ul class="benefit-list"><li>Subsidy: 15% of eligible loan (max ₹15 lakh)</li><li>Must purchase well-established and improved technology</li><li>Only new machinery — second-hand not eligible</li><li>Implemented through SIDBI, NABARD, and commercial banks</li><li>51 specified sub-sectors — check your sector on CLCSS portal</li></ul></div><div style="margin-top:1.5rem"><a href="https://clcss.dcmsme.gov.in" target="_blank" class="btn btn-primary btn-sm">🌐 CLCSS Portal</a></div></div></div></div>
+
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="../index.html" class="navbar-brand"><div class="brand-logo">M</div><span class="brand-text">MSME<span>Hub</span></span></a>
+        <p>India's most comprehensive MSME resource platform. Free tools, guides, and expert guidance.</p>
+        <div class="footer-tricolor" style="margin-top:1rem"><div class="tricolor-block" style="background:#FF6B00"></div><div class="tricolor-block" style="background:white"></div><div class="tricolor-block" style="background:#138808"></div><span style="font-size:0.75rem;margin-left:0.5rem;color:rgba(255,255,255,0.4)">Made in India 🇮🇳</span></div>
+      </div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="schemes.html">Govt Schemes</a></li><li><a href="tools.html">Business Tools</a></li><li><a href="guidebook.html">Guidebooks</a></li><li><a href="finance.html">Finance</a></li></ul></div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="tax.html">Tax &amp; Certificates</a></li><li><a href="compliance.html">Compliance</a></li><li><a href="growth.html">Growth</a></li><li><a href="connect.html">Connect</a></li></ul></div>
+      <div class="footer-col"><h4>Official Portals</h4><ul><li><a href="https://udyamregistration.gov.in" target="_blank">Udyam Registration</a></li><li><a href="https://www.gst.gov.in" target="_blank">GST Portal</a></li><li><a href="https://dgft.gov.in" target="_blank">DGFT / IEC</a></li><li><a href="https://www.startupindia.gov.in" target="_blank">Startup India</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 MSMEHub. For informational purposes only. Verify details with official sources.</span><span>Built for 6.3 Crore Indian MSMEs 🚀</span></div>
+  </div>
+</footer>
+
+<script>
+// Navbar
+document.getElementById('hamburger')?.addEventListener('click',()=>document.getElementById('navLinks')?.classList.toggle('open'));
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks')?.classList.remove('open')));
+
+// Progress bar
+window.addEventListener('scroll',()=>{
+  const p=document.getElementById('progressBar');
+  if(p) p.style.width=((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100)+'%';
+});
+
+// View toggle
+document.querySelectorAll('.view-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.view-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('schemesGrid')?.classList.toggle('list-view',btn.dataset.view==='list');
+  });
+});
+
+// Filters
+function filterSchemes(){
+  const ind=document.getElementById('filterIndustry').value;
+  const st=document.getElementById('filterState').value;
+  const gn=document.getElementById('filterGender').value;
+  const tr=document.getElementById('filterTrade').value;
+  let visible=0;
+  document.querySelectorAll('.scheme-card').forEach(card=>{
+    const mi=!ind||(card.dataset.industry||'').split(',').some(v=>v===ind||v==='all');
+    const ms=!st||(card.dataset.state||'').split(',').some(v=>v===st||v==='all');
+    const mg=!gn||(card.dataset.gender||'').split(',').some(v=>v===gn||v==='all');
+    const mt=!tr||(card.dataset.trade||'').split(',').some(v=>v===tr||v==='all');
+    const show=mi&&ms&&mg&&mt;
+    card.style.display=show?'':'none';
+    if(show) visible++;
+  });
+  const c=document.getElementById('schemeCount');
+  if(c) c.textContent=`Showing ${visible} scheme${visible!==1?'s':''}`;
+}
+document.querySelectorAll('.scheme-filter').forEach(f=>f.addEventListener('change',filterSchemes));
+function clearFilters(){
+  document.querySelectorAll('.scheme-filter').forEach(f=>f.value='');
+  filterSchemes();
+}
+
+// Modal
+function openModal(id){document.getElementById(id)?.classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(id){document.getElementById(id)?.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.modal-overlay').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeModal(m.id);}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal-overlay.open').forEach(m=>closeModal(m.id));});
+
+// Eligibility
+function checkEligibility(id){
+  const form=document.getElementById('eligForm_'+id);
+  const result=document.getElementById('eligResult_'+id);
+  if(!form||!result) return;
+  const udyam=form.querySelector('[name="udyam"]')?.value;
+  const outstanding=form.querySelector('[name="outstanding"]')?.value;
+  const turnover=parseFloat(form.querySelector('[name="turnover"]')?.value)||0;
+  let eligible=true;
+  if(udyam==='no') eligible=false;
+  if(outstanding==='above50') eligible=false;
+  if(id==='cgtmse'&&turnover>250) eligible=false;
+  result.classList.add('show');
+  result.classList.toggle('fail',!eligible);
+  result.querySelector('h4').textContent=eligible?'✅ You appear eligible!':'❌ You may not meet all criteria';
+  result.querySelector('p').textContent=eligible?'Based on your inputs, you meet the basic criteria. Visit the official portal or your nearest bank branch to apply.':'Based on your inputs, you may not meet one or more eligibility criteria. Review the requirements or consult your bank.';
+}
+</script>
+</body>
+</html>

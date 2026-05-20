@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance Solutions for MSMEs — MSMEHub</title>
+  <meta name="description" content="Complete guide to all MSME financing options — Overdraft, Term Loan, LC, Bank Guarantee, Cash Credit, and more.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand"><div class="brand-logo">M</div><span class="brand-text">MSME<span>Hub</span></span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Home</a></li><li><a href="schemes.html">Govt Schemes</a></li><li><a href="tools.html">Tools</a></li><li><a href="guidebook.html">Guidebook</a></li><li><a href="finance.html" class="active">Finance</a></li><li><a href="tax.html">Tax &amp; Cert.</a></li><li><a href="compliance.html">Compliance</a></li><li><a href="growth.html">Growth</a></li><li><a href="connect.html" class="nav-cta btn">Connect</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<main class="main-content">
+  <section style="background:linear-gradient(135deg,var(--navy),var(--navy-mid));padding:4rem 2rem 3rem;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 80% 50%,rgba(212,160,23,0.12),transparent 60%)"></div>
+    <div class="container" style="position:relative;z-index:1">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem"><a href="../index.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem">Home</a><span style="color:rgba(255,255,255,0.3)">›</span><span style="color:var(--saffron);font-size:0.85rem">Finance</span></div>
+      <h1 style="font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:white;margin-bottom:0.75rem">MSME Financing Solutions</h1>
+      <p style="color:rgba(255,255,255,0.65);max-width:620px">Every financing instrument your MSME needs — explained clearly with eligibility, process, rates, and practical tips.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="finance-grid">
+
+        <div class="finance-card" onclick="openModal('f-od')"><div class="finance-card-top"></div><div class="finance-card-body"><div class="finance-icon">🔄</div><h3>Overdraft (OD)</h3><p>Revolving credit facility — draw and repay multiple times within sanctioned limit. Interest only on utilized amount.</p><div class="finance-meta"><span class="tag">Working Capital</span><span class="tag green">Secured / Unsecured</span></div></div></div>
+
+        <div class="finance-card" onclick="openModal('f-tl')"><div class="finance-card-top"></div><div class="finance-card-body"><div class="finance-icon">📋</div><h3>Term Loan</h3><p>Fixed-amount loan repaid over a defined tenure via EMI or EPI. Used for CAPEX, machinery, or medium-term needs.</p><div class="finance-meta"><span class="tag">CAPEX / MTL</span><span class="tag orange">EMI / EPI</span></div></div></div>
+
+        <div class="finance-card" onclick="openModal('f-wctl')"><div class="finance-card-top"></div><div class="finance-card-body"><div class="finance-icon">⚙️</div><h3>Working Capital Term Loan (WCTL)</h3><p>Term loan for permanent working capital gaps. Fixed repayment over 1–5 years. Separate from revolving facilities.</p><div class="finance-meta"><span class="tag">Working Capital</span><span class="tag">1–5 Years</span></div></div></div>
+
+        <div class="finance-card" onclick="openModal('f-lrd')"><div class="finance-card-top"></div><div class="finance-card-body"><div class="finance-icon">🏢</div><h3>Lease Rental Discounting (LRD)</h3><p>Loan against future lease rentals from tenants. EMI repaid from rental cash flows via NACH. For commercial property owners.</p><div class="finance-meta"><span class="tag">Commercial RE</span><span class="tag green">Secured</span></div></div></div>
+
+        <div class="finance-card" onclick="openModal('f-bg')"><div class="finance-card-top"></div><div class="finance-card-body"><div class="finance-icon">🛡️</div><h3>Bank Guarantee (BG)</h3><p>Bank's commitment to pay a third party if you default. Used for tenders, contracts, advance payments, government projects.</p><div class="finance-meta"><span class="tag">Non-Fund Based</span><span class="tag">Performance / Financial</span></div></div></div>
+
+        <div class="finance-card" onclick="openModal('f-lc')"><div class="finance-card-top"></div><div class="finance-card-body"><div class="finance-icon">📜</div><h3>Letter of Credit (LC)</h3><p>Bank-guaranteed payment to seller upon presentation of shipping documents. Eliminates credit risk in domestic/international trade.</p><div class="finance-meta"><span class="tag">Trade Finance</span><span class="tag">Domestic / Export</span></div></div></div>
+
+        <div class="finance-card" onclick="openModal('f-lcd')"><div class="finance-card-top"></div><div class="finance-card-body"><div class="finance-icon">💵</div><h3>LC Discounting</h3><p>Get immediate funds by selling LC receivables to a bank at a discount. No waiting for LC maturity date.</p><div class="finance-meta"><span class="tag">Short Term</span><span class="tag green">Immediate Liquidity</span></div></div></div>
+
+        <div class="finance-card" onclick="openModal('f-cc')"><div class="finance-card-top"></div><div class="finance-card-body"><div class="finance-icon">💳</div><h3>Cash Credit (CC)</h3><p>Revolving credit backed by stocks and debtors. Drawing power computed on monthly stock statements. Most common MSME facility.</p><div class="finance-meta"><span class="tag">Stock/Debtor Backed</span><span class="tag orange">Revolving</span></div></div></div>
+
+        <div class="finance-card" onclick="openModal('f-sblc')"><div class="finance-card-top"></div><div class="finance-card-body"><div class="finance-icon">🌐</div><h3>Standby Letter of Credit (SBLC)</h3><p>Secondary payment guarantee for international trade. Activated only when buyer fails contractual obligations. Last-resort instrument.</p><div class="finance-meta"><span class="tag">International Trade</span><span class="tag">Contingent</span></div></div></div>
+
+        <div class="finance-card" onclick="openModal('f-ler')"><div class="finance-card-top"></div><div class="finance-card-body"><div class="finance-icon">🔒</div><h3>LER (Loan Equivalent Risk)</h3><p>Banking metric converting off-balance sheet exposures (BGs, LCs) to equivalent loan amounts for risk and capital calculations.</p><div class="finance-meta"><span class="tag">Risk Metric</span><span class="tag">Banking Compliance</span></div></div></div>
+
+        <div class="finance-card" onclick="openModal('f-clap')"><div class="finance-card-top"></div><div class="finance-card-body"><div class="finance-icon">🏗️</div><h3>Commercial LAP</h3><p>Loan against commercial/industrial property at 55–65% LTV. Up to 15-year tenure, lower rates, ideal for business expansion.</p><div class="finance-meta"><span class="tag">Commercial Property</span><span class="tag">55–65% LTV</span></div></div></div>
+
+        <div class="finance-card" onclick="openModal('f-treds')"><div class="finance-card-top"></div><div class="finance-card-body"><div class="finance-icon">📱</div><h3>TReDS — Invoice Discounting</h3><p>Trade Receivables Discounting System — platform for MSMEs to discount invoices raised on corporate buyers at competitive rates.</p><div class="finance-meta"><span class="tag">Fintech Platform</span><span class="tag green">Fast Liquidity</span></div></div></div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="f-od"><div class="modal" style="position:relative"><div class="modal-header" style="position:relative"><button class="modal-close" onclick="closeModal('f-od')">✕</button><h2>Overdraft (OD) Facility</h2><p>Working Capital | Revolving Credit | Secured & Unsecured</p></div><div class="modal-body">
+  <div class="detail-section"><h4>What is Overdraft?</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">An Overdraft is a revolving credit facility where your bank account is linked to a sanctioned credit limit. You can draw funds up to this limit multiple times and interest is charged only on the daily closing outstanding balance — not on the full sanctioned limit. This makes it very cost-efficient for businesses with fluctuating working capital needs.</p></div>
+  <div class="detail-section"><h4>How It Works</h4><ul class="benefit-list"><li>Bank sanctions a limit based on your financials, collateral, and credit history</li><li>You can draw and repay any number of times within the limit</li><li>Interest charged daily on closing balance at annual rate ÷ 365</li><li>Interest debited to account monthly</li><li>Limit reviewed and renewed annually upon submission of financials</li></ul></div>
+  <div class="detail-section"><h4>Secured vs Unsecured OD</h4><ul class="benefit-list"><li><strong>Secured OD:</strong> Against FD, property, stocks, debtors — interest 8–13% p.a. Lower risk for bank → lower rate</li><li><strong>Unsecured OD (Clean OD):</strong> Based on business vintage, turnover, and CIBIL score — interest 14–22% p.a.</li></ul></div>
+  <div class="detail-section"><h4>Types of OD Facilities</h4><ul class="benefit-list"><li><strong>FD OD:</strong> Against fixed deposit — cheapest, FD rate + 1–2%</li><li><strong>Cash Credit (CC):</strong> Against stocks and debtors — most common for traders/manufacturers</li><li><strong>Book Debt OD:</strong> Against outstanding receivables/invoices</li><li><strong>Swap OD:</strong> Short-term, rolled over against expected inflows — used by exporters</li><li><strong>Property OD:</strong> Against residential or commercial property — higher limits available</li></ul></div>
+  <div class="info-box"><strong>💡 When to use OD?</strong> Ideal for seasonal businesses, invoice-heavy industries, and businesses needing quick short-term credit. Avoid using OD for long-term capital expenditure — use Term Loans instead.</div>
+  <div style="margin-top:1.5rem"><a href="tools.html#od" class="btn btn-primary btn-sm">🧮 Calculate OD Interest</a></div>
+</div></div></div>
+
+<div class="modal-overlay" id="f-tl"><div class="modal" style="position:relative"><div class="modal-header" style="position:relative"><button class="modal-close" onclick="closeModal('f-tl')">✕</button><h2>Term Loan</h2><p>CAPEX | MTL | Property Purchase | Fixed Tenure</p></div><div class="modal-body">
+  <div class="detail-section"><h4>What is a Term Loan?</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">A Term Loan is a lump-sum disbursement for a specific purpose, repaid over a fixed period through regular instalments (monthly, quarterly, or half-yearly). The repayment schedule — either EMI or EPI — is defined at the start of the loan.</p></div>
+  <div class="detail-section"><h4>EMI vs EPI</h4>
+    <div style="overflow-x:auto"><table class="invoice-table" style="font-size:0.85rem"><thead><tr><th>Feature</th><th>EMI (Equated Monthly Instalment)</th><th>EPI (Equated Principal Instalment)</th></tr></thead><tbody>
+      <tr><td>Monthly Payment</td><td>Fixed throughout tenure</td><td>Decreasing each month</td></tr>
+      <tr><td>Interest Component</td><td>Higher initially, decreases</td><td>Decreases each month</td></tr>
+      <tr><td>Principal Component</td><td>Lower initially, increases</td><td>Fixed every month</td></tr>
+      <tr><td>Total Interest Outgo</td><td>Higher</td><td>Lower</td></tr>
+      <tr><td>Cash Flow Planning</td><td>Easier (fixed amount)</td><td>Variable (lower over time)</td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="detail-section"><h4>Types of Term Loans for MSMEs</h4><ul class="benefit-list">
+    <li><strong>CAPEX Loan:</strong> Capital expenditure — machinery, equipment, factory building. Tenure 3–10 years. Primary security: asset financed.</li>
+    <li><strong>Medium-Term Loan (MTL):</strong> Expansion, renovation, working capital gap. Tenure 1–5 years.</li>
+    <li><strong>Property Purchase Loan:</strong> For buying commercial/industrial property. Up to 15–20 years. 75–80% LTV. Property mortgaged.</li>
+    <li><strong>Project Loan:</strong> For greenfield / large expansion projects. Long tenure. Multiple disbursements during construction.</li>
+  </ul></div>
+  <div class="detail-section"><h4>Secured vs Unsecured</h4><ul class="benefit-list">
+    <li><strong>Secured:</strong> Asset financed serves as primary security; collateral property for additional cover</li>
+    <li><strong>Unsecured:</strong> Based on CIBIL, turnover, vintage — available from NBFCs and fintechs at 15–24% p.a.</li>
+    <li>CGTMSE can be used to make secured loans collateral-free for MSEs</li>
+  </ul></div>
+  <div style="margin-top:1.5rem"><a href="tools.html" class="btn btn-primary btn-sm">🧮 EMI Calculator</a></div>
+</div></div></div>
+
+<div class="modal-overlay" id="f-wctl"><div class="modal" style="position:relative"><div class="modal-header" style="position:relative"><button class="modal-close" onclick="closeModal('f-wctl')">✕</button><h2>Working Capital Term Loan (WCTL)</h2><p>Fixed Working Capital | 1–5 Years | EMI / EPI</p></div><div class="modal-body">
+  <div class="detail-section"><h4>What is WCTL?</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">A Working Capital Term Loan (WCTL) is sanctioned when a business has a permanent working capital deficit that cannot be managed through revolving CC/OD facilities. Unlike CC/OD which are revolving, WCTL is a one-time disbursement repaid over a fixed schedule of 12–60 months.</p></div>
+  <div class="detail-section"><h4>When is WCTL Needed?</h4><ul class="benefit-list">
+    <li>When OD/CC limit is insufficient to cover actual working capital needs</li>
+    <li>During rapid business expansion with growing receivables and inventory</li>
+    <li>To fund long-credit-cycle industries (construction, project-based businesses)</li>
+    <li>Post-COVID re-stocking or restart situations (also eligible under ECLGS)</li>
+  </ul></div>
+  <div class="detail-section"><h4>Key Terms</h4><ul class="benefit-list">
+    <li>Tenure: 12–60 months typically (varies by bank)</li>
+    <li>Security: Hypothecation of current assets (stocks, debtors) as primary; collateral may be needed</li>
+    <li>Interest: Floating, linked to bank's MCLR or Repo Rate</li>
+    <li>Repayment: EMI or EPI — decided at time of sanction</li>
+    <li>Often granted alongside existing CC/OD as supplementary facility</li>
+  </ul></div>
+</div></div></div>
+
+<div class="modal-overlay" id="f-lrd"><div class="modal" style="position:relative"><div class="modal-header" style="position:relative"><button class="modal-close" onclick="closeModal('f-lrd')">✕</button><h2>Lease Rental Discounting (LRD)</h2><p>Commercial Property | Rental-Backed Loan | Long Tenure</p></div><div class="modal-body">
+  <div class="detail-section"><h4>What is LRD?</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">LRD is a unique loan product where a property owner pledges future lease rental receivables from their commercial tenants as security. The bank discounts these future cash flows at present value and provides a lump-sum loan. The EMIs are directly repaid from the tenant's rental payments through NACH/ECS — making it essentially self-servicing.</p></div>
+  <div class="detail-section"><h4>How LRD Works</h4><ul class="benefit-list">
+    <li>You own a commercial property (office/shop/warehouse) leased to a tenant</li>
+    <li>Bank takes assignment of lease rentals — tenant pays directly to bank's NACH</li>
+    <li>Loan = 70–80% of Net Present Value of remaining lease rentals</li>
+    <li>EMI automatically deducted from rental inflows each month</li>
+    <li>Tenure tied to lease agreement (typically 5–15 years)</li>
+  </ul></div>
+  <div class="detail-section"><h4>Secured vs Unsecured</h4><ul class="benefit-list">
+    <li>Fully Secured — both the property and lease rental assignment as collateral</li>
+    <li>Interest rates typically lower than normal LAP because cash flows are predictable</li>
+    <li>Tenant creditworthiness is a major factor in bank's appraisal</li>
+    <li>Strong tenants (MNCs, PSUs, large corps) → better rate and higher LTV</li>
+  </ul></div>
+</div></div></div>
+
+<div class="modal-overlay" id="f-bg"><div class="modal" style="position:relative"><div class="modal-header" style="position:relative"><button class="modal-close" onclick="closeModal('f-bg')">✕</button><h2>Bank Guarantee (BG)</h2><p>Non-Fund Based | Contingent Liability | Tender / Performance</p></div><div class="modal-body">
+  <div class="detail-section"><h4>What is a Bank Guarantee?</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">A Bank Guarantee (BG) is a bank's irrevocable commitment to pay a specified amount to a beneficiary (third party) if the applicant (your business) fails to fulfil its contractual obligations. Unlike a loan, BG is a contingent liability — the bank pays only if you default, not otherwise.</p></div>
+  <div class="detail-section"><h4>Common BG Uses for MSMEs</h4><ul class="benefit-list">
+    <li><strong>Tender / Bid BG (EMD):</strong> Required to submit tenders; assures seriousness of bid. Typically 2–5% of tender value</li>
+    <li><strong>Performance BG:</strong> Assures satisfactory completion of a contract/order. Typically 5–10% of contract value</li>
+    <li><strong>Advance Payment BG:</strong> Issued when buyer gives advance; BG assures refund if seller fails to deliver</li>
+    <li><strong>Financial / Payment BG:</strong> Guarantees payment of dues to a supplier or government body</li>
+    <li><strong>Deferred Payment BG:</strong> For payment of deferred consideration (machinery purchase in instalments)</li>
+  </ul></div>
+  <div class="detail-section"><h4>How to Avail a BG</h4><ul class="benefit-list">
+    <li>Apply to your bank with application, draft BG wording, and project/contract details</li>
+    <li>Bank will secure with 100% cash margin OR allow issuance against your existing credit limit (fund-based)</li>
+    <li>BG charges: 0.5–1% p.a. on BG amount + stamp duty charges</li>
+    <li>BG has a defined expiry date — must be renewed if contract extends</li>
+  </ul></div>
+  <div class="info-box"><strong>💡 BG vs LC</strong> BG is a contingent guarantee (secondary obligation — paid only on default). LC is a primary payment mechanism (bank pays on presentation of documents). Both are non-fund based but serve different purposes.</div>
+</div></div></div>
+
+<div class="modal-overlay" id="f-lc"><div class="modal" style="position:relative"><div class="modal-header" style="position:relative"><button class="modal-close" onclick="closeModal('f-lc')">✕</button><h2>Letter of Credit (LC)</h2><p>Trade Finance | Bank-Backed Payment | Domestic & Export</p></div><div class="modal-body">
+  <div class="detail-section"><h4>What is an LC?</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">A Letter of Credit (LC) is a bank instrument where the buyer's bank (Issuing Bank) guarantees payment to the seller (Beneficiary) upon presentation of specified documents (invoice, bill of lading, packing list, etc.) that prove shipment or delivery has occurred. It completely eliminates credit risk between trading parties who don't know each other well.</p></div>
+  <div class="detail-section"><h4>LC Process Flow</h4><ul class="benefit-list">
+    <li><strong>Step 1:</strong> Buyer applies to their bank (Issuing Bank) for LC issuance</li>
+    <li><strong>Step 2:</strong> Issuing Bank opens LC and sends it to seller's bank (Advising/Confirming Bank)</li>
+    <li><strong>Step 3:</strong> Seller ships goods and prepares specified documents</li>
+    <li><strong>Step 4:</strong> Seller presents documents to their bank (Negotiating Bank)</li>
+    <li><strong>Step 5:</strong> Negotiating Bank pays seller after verifying documents</li>
+    <li><strong>Step 6:</strong> Issuing Bank reimburses Negotiating Bank; Buyer's account debited</li>
+  </ul></div>
+  <div class="detail-section"><h4>Types of LC</h4><ul class="benefit-list">
+    <li><strong>Sight LC:</strong> Payment on demand immediately upon document presentation</li>
+    <li><strong>Usance/DA LC:</strong> Deferred payment — 30/60/90/180 days credit to buyer</li>
+    <li><strong>Red Clause LC:</strong> Advance payment allowed to seller before shipment (rare)</li>
+    <li><strong>Revolving LC:</strong> Automatically reinstates for repeat transactions within a period</li>
+    <li><strong>Back-to-Back LC:</strong> LC opened on the strength of another (master) LC — used by trading intermediaries</li>
+  </ul></div>
+</div></div></div>
+
+<div class="modal-overlay" id="f-lcd"><div class="modal" style="position:relative"><div class="modal-header" style="position:relative"><button class="modal-close" onclick="closeModal('f-lcd')">✕</button><h2>LC Discounting</h2><p>Trade Finance | Immediate Liquidity | Off-Balance Sheet</p></div><div class="modal-body">
+  <div class="detail-section"><h4>What is LC Discounting?</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">LC Discounting allows a seller/beneficiary of a Usance (deferred payment) LC to get immediate funds instead of waiting for the LC payment date. The seller "discounts" (sells) the LC receivable to a bank at a small discount (interest charge), receiving funds immediately while the bank collects payment from the issuing bank at maturity.</p></div>
+  <div class="detail-section"><h4>Benefits of LC Discounting</h4><ul class="benefit-list">
+    <li>Immediate liquidity — don't wait 30/60/90 days for LC payment</li>
+    <li>Discounting rates typically lower than CC/OD rates (since LC-backed = bank risk)</li>
+    <li>For buyers: effectively extends credit period while seller gets paid immediately</li>
+    <li>For banks: low-risk facility since backed by another bank's guarantee</li>
+  </ul></div>
+  <div class="detail-section"><h4>Discounting Rates</h4><ul class="benefit-list">
+    <li>Domestic LC Discounting: typically 8–11% p.a.</li>
+    <li>Import LC Discounting: LIBOR/SOFR + spread (for foreign currency)</li>
+    <li>Cost depends on: creditworthiness of issuing bank, LC tenor, buyer profile</li>
+  </ul></div>
+</div></div></div>
+
+<div class="modal-overlay" id="f-cc"><div class="modal" style="position:relative"><div class="modal-header" style="position:relative"><button class="modal-close" onclick="closeModal('f-cc')">✕</button><h2>Cash Credit (CC)</h2><p>Working Capital | Stock & Book Debt | Drawing Power</p></div><div class="modal-body">
+  <div class="detail-section"><h4>What is Cash Credit?</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">Cash Credit (CC) is India's most prevalent short-term revolving working capital facility. It is backed by the primary security of hypothecation of stocks (raw material, WIP, finished goods) and book debts (outstanding receivables/debtors). The maximum amount you can draw at any time is called the Drawing Power (DP), computed every month on submitted stock statements.</p></div>
+  <div class="detail-section"><h4>Drawing Power Calculation</h4>
+    <div class="info-box" style="margin:0"><strong>DP = (Eligible Stocks × Advance Rate) + (Eligible Debtors × Advance Rate)</strong></div>
+    <ul class="benefit-list" style="margin-top:0.75rem">
+      <li><strong>Eligible Stocks:</strong> Stocks owned by you, paid for (not consignment/hypothecated elsewhere). Aged stock (>180 days) deducted.</li>
+      <li><strong>Advance Rate on Stocks:</strong> Typically 60–75% (i.e., bank applies 25–40% margin)</li>
+      <li><strong>Eligible Debtors:</strong> Debtors below 90 days. Old/doubtful debtors excluded.</li>
+      <li><strong>Advance Rate on Debtors:</strong> Typically 60–75%</li>
+      <li>DP cannot exceed the overall CC sanctioned limit</li>
+    </ul>
+  </div>
+  <div class="detail-section"><h4>Monthly Obligations</h4><ul class="benefit-list">
+    <li>Submit Monthly Stock Statement (MSS) by 7th of every month</li>
+    <li>Monthly Book Debt Statement with ageing</li>
+    <li>Annual renewal with audited financials</li>
+    <li>Quarterly progress reports for larger limits</li>
+  </ul></div>
+</div></div></div>
+
+<div class="modal-overlay" id="f-sblc"><div class="modal" style="position:relative"><div class="modal-header" style="position:relative"><button class="modal-close" onclick="closeModal('f-sblc')">✕</button><h2>Standby Letter of Credit (SBLC)</h2><p>International Trade | Contingent Guarantee | Last Resort Payment</p></div><div class="modal-body">
+  <div class="detail-section"><h4>What is SBLC?</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">An SBLC (Standby Letter of Credit) is a payment guarantee used primarily in international trade. Unlike a regular LC which is a primary payment mechanism, SBLC is invoked only when the buyer/applicant FAILS to fulfil contractual obligations — making it a "standby" or "last resort" payment guarantee. It is governed by ISP98 (International Standby Practices) or UCP600.</p></div>
+  <div class="detail-section"><h4>SBLC vs Regular LC</h4>
+    <div style="overflow-x:auto"><table class="invoice-table" style="font-size:0.85rem"><thead><tr><th>Feature</th><th>Regular LC</th><th>SBLC</th></tr></thead><tbody>
+      <tr><td>Primary use</td><td>Payment mechanism for trade</td><td>Guarantee / credit enhancement</td></tr>
+      <tr><td>When paid</td><td>On document presentation (normal)</td><td>Only on buyer's default</td></tr>
+      <tr><td>Governing rules</td><td>UCP600</td><td>ISP98 / UCP600</td></tr>
+      <tr><td>Common use</td><td>Goods trade</td><td>Services, real estate, infrastructure</td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="detail-section"><h4>MSME Use Cases</h4><ul class="benefit-list">
+    <li>International contracts where foreign party wants payment security</li>
+    <li>Cross-border borrowing where Indian bank issues SBLC for overseas lender</li>
+    <li>Oil, gas, commodity trading contracts</li>
+    <li>Long-term supply agreements with foreign buyers</li>
+  </ul></div>
+</div></div></div>
+
+<div class="modal-overlay" id="f-ler"><div class="modal" style="position:relative"><div class="modal-header" style="position:relative"><button class="modal-close" onclick="closeModal('f-ler')">✕</button><h2>LER — Loan Equivalent Risk</h2><p>Banking Risk Metric | Off-Balance Sheet Exposure</p></div><div class="modal-body">
+  <div class="detail-section"><h4>What is LER?</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">LER (Loan Equivalent Risk) is a regulatory metric used by banks to quantify and manage off-balance sheet credit exposures. Off-balance sheet items like Bank Guarantees, Letters of Credit, derivatives, and undrawn credit limits create contingent credit risk. LER converts these into equivalent loan amounts for risk-weighting and large exposure calculations under RBI's Large Exposure Framework (LEF).</p></div>
+  <div class="detail-section"><h4>Why it Matters for MSMEs</h4><ul class="benefit-list">
+    <li>BGs and LCs issued to you count towards the bank's exposure limit on your firm</li>
+    <li>Under RBI's LEF, a single borrower exposure cannot exceed 15% of bank's capital</li>
+    <li>High off-balance sheet exposure = reduced room for fresh fund-based limits</li>
+    <li>Understanding LER helps MSMEs plan their limit utilisation across banks</li>
+    <li>Banks may ask you to reduce contingent limits before enhancing fund-based limits</li>
+  </ul></div>
+  <div class="info-box"><strong>💡 Practical Tip:</strong> If you're reaching your bank's exposure limits, consider distributing facilities across 2–3 banks to create headroom for future credit growth.</div>
+</div></div></div>
+
+<div class="modal-overlay" id="f-clap"><div class="modal" style="position:relative"><div class="modal-header" style="position:relative"><button class="modal-close" onclick="closeModal('f-clap')">✕</button><h2>Commercial LAP — Loan Against Property</h2><p>Commercial / Industrial Property | 55–65% LTV | Up to 15 Years</p></div><div class="modal-body">
+  <div class="detail-section"><h4>What is Commercial LAP?</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">Commercial LAP is a secured loan against commercial or industrial property — shops, offices, warehouses, factory buildings, or industrial plots. It offers significantly higher loan amounts and longer repayment tenures compared to unsecured loans, making it ideal for MSME business expansion, debt consolidation, or large working capital infusion.</p></div>
+  <div class="detail-section"><h4>Key Parameters</h4><div style="overflow-x:auto"><table class="invoice-table" style="font-size:0.85rem"><thead><tr><th>Parameter</th><th>Commercial LAP</th><th>Residential LAP</th></tr></thead><tbody>
+    <tr><td>LTV (Loan-to-Value)</td><td>55–65% of market value</td><td>70–75% of market value</td></tr>
+    <tr><td>Typical Tenure</td><td>Up to 15 years</td><td>Up to 20 years</td></tr>
+    <tr><td>Interest Rate</td><td>9.5–13% p.a.</td><td>8.5–12% p.a.</td></tr>
+    <tr><td>Processing Fee</td><td>0.5–1.5%</td><td>0.25–1%</td></tr>
+    <tr><td>Income Proof</td><td>Business financials + ITR</td><td>Salary slips / ITR</td></tr>
+  </tbody></table></div></div>
+  <div class="detail-section"><h4>Secured or Unsecured?</h4><ul class="benefit-list">
+    <li>Fully Secured — commercial property mortgaged (registered/equitable)</li>
+    <li>Risk: Property can be auctioned (SARFAESI) if loan defaults continuously</li>
+    <li>Much lower rate vs unsecured business loans (often 5–10% lower)</li>
+  </ul></div>
+</div></div></div>
+
+<div class="modal-overlay" id="f-treds"><div class="modal" style="position:relative"><div class="modal-header" style="position:relative"><button class="modal-close" onclick="closeModal('f-treds')">✕</button><h2>TReDS — Trade Receivables Discounting System</h2><p>Fintech Platform | Invoice Discounting | RBI Regulated</p></div><div class="modal-body">
+  <div class="detail-section"><h4>What is TReDS?</h4><p style="font-size:0.92rem;color:var(--gray-600);line-height:1.7">TReDS is an RBI-regulated electronic platform that enables MSMEs to discount their receivables (invoices) raised on corporate buyers and government entities at competitive, transparent market rates. Multiple financiers bid on each invoice, ensuring best pricing.</p></div>
+  <div class="detail-section"><h4>How TReDS Works</h4><ul class="benefit-list">
+    <li>MSME seller uploads invoice on TReDS platform</li>
+    <li>Buyer (corporate) accepts the invoice on the platform</li>
+    <li>Multiple banks/financiers bid — lowest rate wins</li>
+    <li>MSME gets funded within 1–2 days at the best bid rate</li>
+    <li>Buyer pays the financer on due date</li>
+  </ul></div>
+  <div class="detail-section"><h4>TReDS Platforms in India</h4><ul class="benefit-list">
+    <li><strong>RXIL:</strong> NSE + SIDBI joint venture</li>
+    <li><strong>M1xchange:</strong> Mynd Solutions (Axis Bank backed)</li>
+    <li><strong>Invoicemart:</strong> A.TReDS (Axis Bank + mjunction)</li>
+  </ul></div>
+  <div class="info-box"><strong>📌 Note:</strong> Companies with turnover above ₹500 crore are now mandatorily required to be onboarded on TReDS platforms to ensure timely payment to MSME vendors.</div>
+</div></div></div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-top">
+      <div class="footer-brand"><a href="../index.html" class="navbar-brand"><div class="brand-logo">M</div><span class="brand-text">MSME<span>Hub</span></span></a><p>India's most comprehensive MSME resource platform.</p></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="schemes.html">Govt Schemes</a></li><li><a href="tools.html">Business Tools</a></li><li><a href="guidebook.html">Guidebooks</a></li><li><a href="finance.html">Finance</a></li></ul></div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="tax.html">Tax &amp; Certificates</a></li><li><a href="compliance.html">Compliance</a></li><li><a href="growth.html">Growth</a></li><li><a href="connect.html">Connect</a></li></ul></div>
+      <div class="footer-col"><h4>Official Portals</h4><ul><li><a href="https://udyamregistration.gov.in" target="_blank">Udyam</a></li><li><a href="https://www.gst.gov.in" target="_blank">GST Portal</a></li><li><a href="https://www.cgtmse.in" target="_blank">CGTMSE</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 MSMEHub. For informational purposes only.</span><span>Built for 6.3 Crore Indian MSMEs 🚀</span></div>
+  </div>
+</footer>
+<script>
+document.getElementById('hamburger')?.addEventListener('click',()=>document.getElementById('navLinks')?.classList.toggle('open'));
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks')?.classList.remove('open')));
+window.addEventListener('scroll',()=>{const p=document.getElementById('progressBar');if(p)p.style.width=((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100)+'%';});
+function openModal(id){document.getElementById(id)?.classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(id){document.getElementById(id)?.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.modal-overlay').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeModal(m.id);}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal-overlay.open').forEach(m=>closeModal(m.id));});
+</script>
+</body>
+</html>

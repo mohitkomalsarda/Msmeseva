@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Tools — EMI, OD, GST, Invoice, Visiting Card | MSMEHub</title>
+  <meta name="description" content="Free MSME business tools — EMI Calculator, OD Interest Calculator, GST Calculator, Invoice Maker, and Digital Visiting Card Maker.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand"><div class="brand-logo">M</div><span class="brand-text">MSME<span>Hub</span></span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="schemes.html">Govt Schemes</a></li>
+    <li><a href="tools.html" class="active">Tools</a></li>
+    <li><a href="guidebook.html">Guidebook</a></li>
+    <li><a href="finance.html">Finance</a></li>
+    <li><a href="tax.html">Tax &amp; Cert.</a></li>
+    <li><a href="compliance.html">Compliance</a></li>
+    <li><a href="growth.html">Growth</a></li>
+    <li><a href="connect.html" class="nav-cta btn">Connect</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<main class="main-content">
+  <section style="background:linear-gradient(135deg,var(--navy),var(--navy-mid));padding:4rem 2rem 3rem;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 80% 50%,rgba(19,136,8,0.12),transparent 60%)"></div>
+    <div class="container" style="position:relative;z-index:1">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem">
+        <a href="../index.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem">Home</a>
+        <span style="color:rgba(255,255,255,0.3)">›</span>
+        <span style="color:var(--saffron);font-size:0.85rem">Business Tools</span>
+      </div>
+      <h1 style="font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:white;margin-bottom:0.75rem">Smart Business Tools</h1>
+      <p style="color:rgba(255,255,255,0.65);max-width:620px">Free, powerful tools to calculate EMIs, OD interest, GST, create invoices, and build your digital visiting card — all in one place.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="tabs-container">
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="t-emi">📊 EMI Calculator</button>
+          <button class="tab-btn" data-tab="t-od">💳 OD Calculator</button>
+          <button class="tab-btn" data-tab="t-gst">🧾 GST Calculator</button>
+          <button class="tab-btn" data-tab="t-invoice">📄 Invoice Maker</button>
+          <button class="tab-btn" data-tab="t-vcard">💼 E-Visiting Card</button>
+        </div>
+
+        <!-- ── EMI CALCULATOR ── -->
+        <div id="t-emi" class="tab-content active">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start">
+            <div class="calc-card">
+              <div class="calc-header"><h3>📊 EMI Calculator</h3><p>Calculate monthly EMI for any loan with live sliders</p></div>
+              <div class="calc-body">
+                <div class="repo-rate-box"><div class="repo-dot"></div><div><strong>RBI Repo Rate: 6.50% p.a.</strong> (as of April 2025). Your effective loan rate = Repo Rate + Bank Spread.</div></div>
+                <div class="input-group">
+                  <label>Loan Amount (₹)</label>
+                  <div class="input-row">
+                    <input class="input-field" id="emiPrincipal" type="number" value="1000000" min="10000" max="100000000" step="50000" oninput="calcEMI()">
+                    <span class="input-val" id="emiPrincipalVal">₹10,00,000</span>
+                  </div>
+                  <input class="input-field" type="range" min="10000" max="100000000" step="50000" value="1000000" oninput="document.getElementById('emiPrincipal').value=this.value;calcEMI()" style="margin-top:0.5rem;width:100%">
+                </div>
+                <div class="input-group">
+                  <label>Rate of Interest (% p.a.)</label>
+                  <div class="input-row">
+                    <input class="input-field" id="emiRate" type="range" min="0.5" max="36" step="0.25" value="10.5" oninput="calcEMI()">
+                    <span class="input-val" id="emiRateVal">10.5%</span>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;font-size:0.72rem;color:var(--gray-400);margin-top:0.2rem"><span>0.5%</span><span>36%</span></div>
+                </div>
+                <div class="input-group">
+                  <label>Tenure (Months)</label>
+                  <div class="input-row">
+                    <input class="input-field" id="emiTenure" type="range" min="1" max="360" step="1" value="60" oninput="calcEMI()">
+                    <span class="input-val" id="emiTenureVal">60 months</span>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;font-size:0.72rem;color:var(--gray-400);margin-top:0.2rem"><span>1 month</span><span>360 months (30 yrs)</span></div>
+                </div>
+                <div class="result-box">
+                  <div class="result-label">Monthly EMI</div>
+                  <div class="result-amount" id="emiResult">₹21,247</div>
+                  <div class="result-sub" id="emiSubNote">For ₹10,00,000 @ 10.5% for 60 months</div>
+                  <div class="result-grid">
+                    <div class="result-item"><div class="result-item-val" id="emiTotal">₹12,74,820</div><div class="result-item-label">Total Payment</div></div>
+                    <div class="result-item"><div class="result-item-val" id="emiInterest">₹2,74,820</div><div class="result-item-label">Total Interest</div></div>
+                    <div class="result-item"><div class="result-item-val" id="emiPrincipalShow">₹10,00,000</div><div class="result-item-label">Principal</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:1.25rem">
+              <div class="info-box"><strong>💡 What is EMI?</strong><br>Equated Monthly Instalment (EMI) is a fixed monthly payment comprising both principal and interest. It allows borrowers to repay loans in predictable, manageable chunks over the loan tenure.</div>
+              <div class="info-box"><strong>📐 EMI Formula</strong><br><code style="background:var(--gray-100);padding:0.2rem 0.5rem;border-radius:4px;font-size:0.85rem">EMI = P × r × (1+r)ⁿ / [(1+r)ⁿ – 1]</code><br><span style="font-size:0.82rem;margin-top:0.4rem;display:block">P = Principal | r = Monthly Rate (annual/12/100) | n = Tenure in months</span></div>
+              <div class="info-box"><strong>🏦 EMI vs EPI</strong><ul style="margin-top:0.5rem;padding-left:1.25rem;font-size:0.88rem;line-height:1.8"><li><strong>EMI:</strong> Fixed payment throughout. Simpler for budgeting.</li><li><strong>EPI:</strong> Fixed principal + reducing interest. Lower total interest. Monthly outflow decreases each month.</li></ul></div>
+              <div class="info-box"><strong>📊 Common MSME Loan Rates (Indicative)</strong>
+                <table style="width:100%;font-size:0.82rem;margin-top:0.5rem;border-collapse:collapse">
+                  <tr style="border-bottom:1px solid var(--gray-200)"><td style="padding:0.3rem 0">Term Loan (Secured)</td><td style="text-align:right;font-weight:600">9–13% p.a.</td></tr>
+                  <tr style="border-bottom:1px solid var(--gray-200)"><td style="padding:0.3rem 0">Machinery Loan (CAPEX)</td><td style="text-align:right;font-weight:600">10–14% p.a.</td></tr>
+                  <tr style="border-bottom:1px solid var(--gray-200)"><td style="padding:0.3rem 0">MSME Unsecured Loan</td><td style="text-align:right;font-weight:600">14–24% p.a.</td></tr>
+                  <tr><td style="padding:0.3rem 0">Commercial LAP</td><td style="text-align:right;font-weight:600">9–12% p.a.</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- AMORTIZATION TABLE -->
+          <div style="margin-top:2rem">
+            <h3 style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:1rem">Amortisation Schedule (First 12 Months)</h3>
+            <div style="overflow-x:auto">
+              <table class="invoice-table" id="amortTable">
+                <thead><tr><th>Month</th><th>Opening Balance</th><th>EMI</th><th>Principal</th><th>Interest</th><th>Closing Balance</th></tr></thead>
+                <tbody id="amortBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── OD CALCULATOR ── -->
+        <div id="t-od" class="tab-content">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start">
+            <div class="calc-card">
+              <div class="calc-header"><h3>💳 Overdraft / CC Interest Calculator</h3><p>Calculate monthly interest on OD / Cash Credit account</p></div>
+              <div class="calc-body">
+                <div class="input-group">
+                  <label>Sanctioned OD/CC Limit (₹)</label>
+                  <div class="input-row">
+                    <input class="input-field" id="odLimit" type="number" value="5000000" min="10000" max="500000000" step="100000" oninput="calcOD()">
+                    <span class="input-val" id="odLimitVal">₹50,00,000</span>
+                  </div>
+                  <input class="input-field" type="range" min="100000" max="100000000" step="100000" value="5000000" oninput="document.getElementById('odLimit').value=this.value;calcOD()" style="margin-top:0.5rem;width:100%">
+                </div>
+                <div class="input-group">
+                  <label>Rate of Interest (% p.a.)</label>
+                  <div class="input-row">
+                    <input class="input-field" id="odRate" type="range" min="5" max="24" step="0.25" value="11" oninput="calcOD()">
+                    <span class="input-val" id="odRateVal">11%</span>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;font-size:0.72rem;color:var(--gray-400);margin-top:0.2rem"><span>5%</span><span>24%</span></div>
+                </div>
+                <div class="input-group">
+                  <label>Average Utilisation (%)</label>
+                  <div class="input-row">
+                    <input class="input-field" id="odUtil" type="range" min="0" max="100" step="1" value="70" oninput="calcOD()">
+                    <span class="input-val" id="odUtilVal">70%</span>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;font-size:0.72rem;color:var(--gray-400);margin-top:0.2rem"><span>0%</span><span>100%</span></div>
+                </div>
+                <div class="result-box">
+                  <div class="result-label">Monthly Interest Payable</div>
+                  <div class="result-amount" id="odResult">₹32,083</div>
+                  <div class="result-grid">
+                    <div class="result-item"><div class="result-item-val" id="odDrawn">₹35,00,000</div><div class="result-item-label">Avg Drawn</div></div>
+                    <div class="result-item"><div class="result-item-val" id="odAnnual">₹3,85,000</div><div class="result-item-label">Annual Interest</div></div>
+                    <div class="result-item"><div class="result-item-val" id="odEffective">11%</div><div class="result-item-label">Effective Rate</div></div>
+                  </div>
+                </div>
+                <div class="info-box" style="margin-top:1.25rem">
+                  <strong>💡 OD Interest Calculation</strong><br>
+                  Interest = (Amount Drawn × Rate%) / 365 × Days<br>
+                  <span style="font-size:0.82rem">Interest charged daily on closing balance and debited monthly.</span>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:1.25rem">
+              <h3 style="font-family:'Syne',sans-serif;font-weight:700">Types of Overdraft / CC Facilities</h3>
+              <div class="finance-card"><div class="finance-card-top"></div><div class="finance-card-body"><h3>FD OD (FDOD)</h3><p>Overdraft against Fixed Deposit. Get 80–90% of FD value as OD limit. Cheapest rate available — typically FD Rate + 1–2%. No income proof needed; FD is sole security. Ideal for those with idle FDs.</p><div class="finance-meta"><span class="tag green">Lowest Rate</span><span class="tag">FD as Security</span></div></div></div>
+              <div class="finance-card"><div class="finance-card-top"></div><div class="finance-card-body"><h3>Cash Credit (CC)</h3><p>Backed by hypothecation of stocks (inventory) and book debts (receivables). Drawing Power (DP) computed monthly on stock statements. Most common working capital facility for manufacturers and traders.</p><div class="finance-meta"><span class="tag">Stock/Debtor Backed</span><span class="tag orange">Monthly Statements</span></div></div></div>
+              <div class="finance-card"><div class="finance-card-top"></div><div class="finance-card-body"><h3>Swap OD</h3><p>Short-term OD rolled over periodically against inward remittances, receivables, or LC proceeds. Popular with exporters and traders for bridging short payment gaps. Usually 30–90 days.</p><div class="finance-meta"><span class="tag">Short Term</span><span class="tag">Export/Trade</span></div></div></div>
+              <div class="finance-card"><div class="finance-card-top"></div><div class="finance-card-body"><h3>Property OD / LAP OD</h3><p>OD facility against residential or commercial property. Higher limits available. Rate slightly higher than FD OD but lower than unsecured OD. Useful for property-owning businesses needing revolving credit.</p><div class="finance-meta"><span class="tag">Property Security</span><span class="tag">Higher Limits</span></div></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── GST CALCULATOR ── -->
+        <div id="t-gst" class="tab-content">
+          <div class="calc-card">
+            <div class="calc-header"><h3>🧾 GST Invoice Calculator</h3><p>Add multiple items with HSN codes — CGST, SGST, IGST calculated automatically</p></div>
+            <div class="calc-body">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:0.75rem">
+                <div style="display:flex;gap:1rem;align-items:center">
+                  <div class="form-group" style="margin:0">
+                    <label style="font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--gray-600)">Transaction Type</label>
+                    <select class="form-input" id="gstTxType" onchange="renderGSTTable()" style="margin-top:0.25rem">
+                      <option value="intra">Intra-State (CGST + SGST)</option>
+                      <option value="inter">Inter-State (IGST)</option>
+                    </select>
+                  </div>
+                </div>
+                <button class="btn btn-primary btn-sm" onclick="addGSTRow()">+ Add Item</button>
+              </div>
+              <div class="gst-table-wrapper">
+                <table class="gst-table">
+                  <thead id="gstHead">
+                    <tr>
+                      <th style="width:40px">S.No</th>
+                      <th style="min-width:100px">HSN Code</th>
+                      <th style="min-width:180px">Particular / Description</th>
+                      <th style="width:70px">Qty</th>
+                      <th style="min-width:100px">Rate (₹)</th>
+                      <th style="min-width:110px">Taxable Amt</th>
+                      <th style="width:100px">GST Rate</th>
+                      <th style="min-width:90px">CGST</th>
+                      <th style="min-width:90px">SGST/UTGST</th>
+                      <th style="min-width:110px">Total</th>
+                      <th style="width:40px"></th>
+                    </tr>
+                  </thead>
+                  <tbody id="gstTableBody"></tbody>
+                </table>
+              </div>
+              <div style="margin-top:1rem;display:flex;gap:0.75rem">
+                <button class="btn btn-outline btn-sm" onclick="addGSTRow()" style="color:var(--saffron);border-color:var(--saffron)">+ Add Row</button>
+                <button class="btn btn-outline btn-sm" onclick="clearGSTTable()" style="color:var(--gray-600);border-color:var(--gray-300)">Clear All</button>
+                <button class="btn btn-primary btn-sm" onclick="printGST()">🖨️ Print</button>
+              </div>
+              <div class="gst-summary" style="margin-top:1rem">
+                <div class="gst-summary-grid">
+                  <div class="gst-sum-item"><label>Taxable Amount</label><div class="val" id="gstTaxable">₹0.00</div></div>
+                  <div class="gst-sum-item"><label>Total CGST</label><div class="val" id="gstCGST">₹0.00</div></div>
+                  <div class="gst-sum-item"><label>Total SGST/UTGST</label><div class="val" id="gstSGST">₹0.00</div></div>
+                  <div class="gst-sum-item"><label>Grand Total (Incl. GST)</label><div class="val" id="gstTotal">₹0.00</div></div>
+                </div>
+              </div>
+              <div class="info-box" style="margin-top:1.5rem">
+                <strong>📌 IGST vs CGST/SGST — When to Apply Which?</strong>
+                <ul style="margin-top:0.5rem;padding-left:1.25rem;font-size:0.88rem;line-height:1.9">
+                  <li><strong>Intra-State Supply</strong> (seller and buyer in same state): Charge CGST (50%) + SGST/UTGST (50%)</li>
+                  <li><strong>Inter-State Supply</strong> (seller and buyer in different states): Charge IGST (full GST rate)</li>
+                  <li><strong>Export:</strong> Zero-rated supply — no GST. File LUT (Letter of Undertaking) or pay IGST and claim refund.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── INVOICE MAKER ── -->
+        <div id="t-invoice" class="tab-content">
+          <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;align-items:start">
+            <!-- INPUT FORM -->
+            <div>
+              <h3 style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:1.5rem">Invoice Details</h3>
+              <div style="display:flex;flex-direction:column;gap:1.25rem">
+                <div class="form-row">
+                  <div class="form-group"><label>Firm / Company Name</label><input class="form-input" id="invFirmName" placeholder="Your Business Name" oninput="renderInvoice()"></div>
+                  <div class="form-group"><label>GSTIN</label><input class="form-input" id="invGST" placeholder="27XXXXX1234Z1ZA" maxlength="15" oninput="renderInvoice()"></div>
+                </div>
+                <div class="form-group"><label>Your Address</label><textarea class="form-input" id="invFromAddr" placeholder="Shop No. 5, Industrial Area, Mumbai - 400001" rows="2" oninput="renderInvoice()"></textarea></div>
+                <div class="form-row">
+                  <div class="form-group"><label>Invoice Number</label><input class="form-input" id="invInvNo" placeholder="INV-2025-001" oninput="renderInvoice()"></div>
+                  <div class="form-group"><label>Invoice Date</label><input class="form-input" type="date" id="invDate" oninput="renderInvoice()"></div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group"><label>Due Date</label><input class="form-input" type="date" id="invDueDate" oninput="renderInvoice()"></div>
+                  <div class="form-group"><label>PO Number (Optional)</label><input class="form-input" id="invPO" placeholder="PO-2025-XYZ" oninput="renderInvoice()"></div>
+                </div>
+                <div style="border-top:1.5px solid var(--gray-200);padding-top:1.25rem">
+                  <h4 style="font-size:0.88rem;font-weight:700;margin-bottom:0.75rem">Bill To</h4>
+                  <div class="form-group"><label>Client / Customer Name</label><input class="form-input" id="invBillTo" placeholder="ABC Enterprises" oninput="renderInvoice()"></div>
+                  <div class="form-group" style="margin-top:0.75rem"><label>Client GSTIN (Optional)</label><input class="form-input" id="invBillGST" placeholder="Client GSTIN" oninput="renderInvoice()"></div>
+                  <div class="form-group" style="margin-top:0.75rem"><label>Client Address</label><textarea class="form-input" id="invBillAddr" placeholder="Address, City, PIN" rows="2" oninput="renderInvoice()"></textarea></div>
+                </div>
+                <div style="border-top:1.5px solid var(--gray-200);padding-top:1.25rem">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem">
+                    <h4 style="font-size:0.88rem;font-weight:700;margin:0">Line Items</h4>
+                    <button class="btn btn-outline btn-sm" onclick="addInvoiceItem()" style="color:var(--saffron);border-color:var(--saffron)">+ Add Item</button>
+                  </div>
+                  <div id="invoiceItemsInputs" style="display:flex;flex-direction:column;gap:0.75rem"></div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group"><label>GST Rate (%)</label><select class="form-input" id="invGSTRate" onchange="renderInvoice()"><option value="0">0% (Exempt)</option><option value="5">5%</option><option value="12">12%</option><option value="18" selected>18%</option><option value="28">28%</option></select></div>
+                  <div class="form-group"><label>Transaction Type</label><select class="form-input" id="invTxType" onchange="renderInvoice()"><option value="intra">Intra-State (CGST+SGST)</option><option value="inter">Inter-State (IGST)</option></select></div>
+                </div>
+                <div class="form-group"><label>Bank / Payment Details</label><input class="form-input" id="invBank" placeholder="Bank: SBI | A/c: 1234567890 | IFSC: SBIN0001234 | UPI: firm@upi" oninput="renderInvoice()"></div>
+                <div class="form-group"><label>Terms &amp; Notes</label><textarea class="form-input" id="invTerms" placeholder="Payment due within 30 days. Goods once sold not returnable." rows="2" oninput="renderInvoice()"></textarea></div>
+                <div class="form-group"><label>Contact Details</label><input class="form-input" id="invContact" placeholder="📞 +91 98765 43210 | ✉️ firm@email.com" oninput="renderInvoice()"></div>
+                <button class="btn btn-primary" onclick="printInvoice()">🖨️ Print / Download PDF</button>
+              </div>
+            </div>
+
+            <!-- INVOICE PREVIEW -->
+            <div id="invoicePreview" class="invoice-preview" style="position:sticky;top:80px">
+              <div class="invoice-header-row">
+                <div>
+                  <div class="invoice-title">INVOICE</div>
+                  <div style="font-size:0.82rem;color:var(--gray-600);margin-top:0.2rem">GST: <strong id="d-gst" style="color:var(--navy)">—</strong></div>
+                  <div style="font-size:0.8rem;color:var(--gray-500);margin-top:0.15rem" id="d-fromAddr"></div>
+                </div>
+                <div class="invoice-meta">
+                  <div>Invoice: <strong id="d-invno">—</strong></div>
+                  <div>Date: <strong id="d-date">—</strong></div>
+                  <div id="d-due-row" style="display:none">Due: <strong id="d-due">—</strong></div>
+                  <div id="d-po-row" style="display:none">PO: <strong id="d-po">—</strong></div>
+                </div>
+              </div>
+              <div class="invoice-parties">
+                <div class="invoice-party"><h4>From</h4><p id="d-firm">Your Business Name</p><span id="d-gst2"></span></div>
+                <div class="invoice-party"><h4>Bill To</h4><p id="d-billto">Client Name</p><span id="d-billgst"></span><span id="d-billaddr" style="display:block;font-size:0.82rem;color:var(--gray-600)"></span></div>
+              </div>
+              <table class="invoice-table">
+                <thead><tr><th>S.No</th><th>Particular</th><th>Qty</th><th>Rate</th><th>Disc.</th><th>Taxable</th><th id="taxColHead">CGST+SGST</th><th>Total</th></tr></thead>
+                <tbody id="invoiceItemsBody"><tr><td colspan="8" style="text-align:center;color:var(--gray-400);padding:2rem">Add items on the left →</td></tr></tbody>
+              </table>
+              <div style="display:flex;justify-content:flex-end">
+                <div class="invoice-totals">
+                  <div class="invoice-total-row"><span>Subtotal (Taxable)</span><span id="d-subtotal">₹0.00</span></div>
+                  <div class="invoice-total-row" id="d-cgst-row"><span>CGST</span><span id="d-cgst">₹0.00</span></div>
+                  <div class="invoice-total-row" id="d-sgst-row"><span>SGST</span><span id="d-sgst">₹0.00</span></div>
+                  <div class="invoice-total-row" id="d-igst-row" style="display:none"><span>IGST</span><span id="d-igst">₹0.00</span></div>
+                  <div class="invoice-total-row grand"><span>Grand Total</span><span id="d-grand">₹0.00</span></div>
+                </div>
+              </div>
+              <div style="margin-top:1.25rem;font-size:0.8rem;color:var(--gray-600);border-top:1px solid var(--gray-100);padding-top:0.75rem" id="d-bank"></div>
+              <div style="font-size:0.78rem;color:var(--gray-400);margin-top:0.5rem;font-style:italic" id="d-terms"></div>
+              <div class="invoice-footer-row" style="margin-top:1.5rem">
+                <div style="font-size:0.78rem;color:var(--gray-500)" id="d-contact"></div>
+                <div class="signature-box">Authorised Signatory</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── E-VISITING CARD ── -->
+        <div id="t-vcard" class="tab-content">
+          <div class="vcard-wrapper">
+            <div class="vcard-inputs">
+              <h3 style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:1.25rem">Card Details</h3>
+              <div class="form-group"><label>Full Name</label><input class="form-input" id="vcardName" placeholder="Rahul Sharma" oninput="updateVCard()"></div>
+              <div class="form-group"><label>Designation / Line of Business</label><input class="form-input" id="vcardLOB" placeholder="Proprietor, XYZ Textiles Pvt Ltd" oninput="updateVCard()"></div>
+              <div class="form-row">
+                <div class="form-group"><label>WhatsApp Number</label><input class="form-input" id="vcardPhone" placeholder="+91 98765 43210" oninput="updateVCard()"></div>
+                <div class="form-group"><label>Email Address</label><input class="form-input" id="vcardEmail" placeholder="you@business.com" oninput="updateVCard()"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Website</label><input class="form-input" id="vcardWebsite" placeholder="www.yoursite.com" oninput="updateVCard()"></div>
+                <div class="form-group"><label>Location</label><input class="form-input" id="vcardLocation" placeholder="Mumbai, Maharashtra" oninput="updateVCard()"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>LinkedIn</label><input class="form-input" id="vcardLinkedIn" placeholder="linkedin.com/in/yourname" oninput="updateVCard()"></div>
+                <div class="form-group"><label>Instagram Handle</label><input class="form-input" id="vcardInsta" placeholder="@yourhandle" oninput="updateVCard()"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Twitter/X Handle</label><input class="form-input" id="vcardTwitter" placeholder="@yourhandle" oninput="updateVCard()"></div>
+                <div class="form-group"><label>Facebook Page</label><input class="form-input" id="vcardFB" placeholder="fb.com/yourpage" oninput="updateVCard()"></div>
+              </div>
+              <div class="form-group"><label>App Link (Optional)</label><input class="form-input" id="vcardApp" placeholder="Play Store or App Store link" oninput="updateVCard()"></div>
+              <div class="form-group">
+                <label>Card Background Theme</label>
+                <div style="display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:0.35rem">
+                  <div class="bg-swatch" data-bg="linear-gradient(135deg,#0A1628 0%,#1A2B47 100%)" style="width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,#0A1628,#1A2B47);cursor:pointer;border:2px solid var(--saffron)"></div>
+                  <div class="bg-swatch" data-bg="linear-gradient(135deg,#FF6B00 0%,#D4A017 100%)" style="width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,#FF6B00,#D4A017);cursor:pointer;border:2px solid transparent"></div>
+                  <div class="bg-swatch" data-bg="linear-gradient(135deg,#138808 0%,#0a6405 100%)" style="width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,#138808,#0a6405);cursor:pointer;border:2px solid transparent"></div>
+                  <div class="bg-swatch" data-bg="linear-gradient(135deg,#1e3a8a 0%,#4f46e5 100%)" style="width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,#1e3a8a,#4f46e5);cursor:pointer;border:2px solid transparent"></div>
+                  <div class="bg-swatch" data-bg="linear-gradient(135deg,#7f1d1d 0%,#b91c1c 100%)" style="width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,#7f1d1d,#b91c1c);cursor:pointer;border:2px solid transparent"></div>
+                  <div class="bg-swatch" data-bg="linear-gradient(135deg,#0f172a 0%,#334155 100%)" style="width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,#0f172a,#334155);cursor:pointer;border:2px solid transparent"></div>
+                  <div class="bg-swatch" data-bg="linear-gradient(135deg,#134e4a 0%,#0f766e 100%)" style="width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,#134e4a,#0f766e);cursor:pointer;border:2px solid transparent"></div>
+                  <div class="bg-swatch" data-bg="linear-gradient(135deg,#4a044e 0%,#86198f 100%)" style="width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,#4a044e,#86198f);cursor:pointer;border:2px solid transparent"></div>
+                </div>
+              </div>
+              <div class="info-box" style="margin-top:0.5rem"><strong>📱 About the QR Code</strong><br><span style="font-size:0.85rem">The QR code in the center of the card encodes your vCard contact data (name, phone, email, website). When scanned with any smartphone camera, it automatically creates a contact entry with all your details.</span></div>
+              <button class="btn btn-primary" onclick="downloadCard()">💾 Download Card (PNG)</button>
+            </div>
+            <div class="vcard-preview">
+              <h3 style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:1rem">Live Preview</h3>
+              <div class="vcard" id="vcardMain">
+                <div class="vcard-bg"><div id="vcardBG" style="width:100%;height:100%;background:linear-gradient(135deg,#0A1628,#1A2B47)"></div></div>
+                <div class="vcard-overlay" id="vcardOverlay" style="background:rgba(0,0,0,0.35)"></div>
+                <div class="vcard-content" style="position:relative;z-index:2;padding-right:90px">
+                  <div class="vcard-name" id="vc-name">Your Name</div>
+                  <div class="vcard-lob" id="vc-lob">Designation / Business</div>
+                </div>
+                <div class="vcard-qr-area">
+                  <div class="vcard-qr" id="vc-qr">
+                    <svg width="60" height="60" viewBox="0 0 60 60" style="opacity:0.85">
+                      <rect x="2" y="2" width="20" height="20" fill="none" stroke="#333" stroke-width="2"/>
+                      <rect x="6" y="6" width="12" height="12" fill="#333"/>
+                      <rect x="38" y="2" width="20" height="20" fill="none" stroke="#333" stroke-width="2"/>
+                      <rect x="42" y="6" width="12" height="12" fill="#333"/>
+                      <rect x="2" y="38" width="20" height="20" fill="none" stroke="#333" stroke-width="2"/>
+                      <rect x="6" y="42" width="12" height="12" fill="#333"/>
+                      <rect x="26" y="4" width="4" height="4" fill="#333"/>
+                      <rect x="26" y="12" width="4" height="4" fill="#333"/>
+                      <rect x="26" y="20" width="8" height="4" fill="#333"/>
+                      <rect x="26" y="28" width="4" height="8" fill="#333"/>
+                      <rect x="34" y="26" width="8" height="4" fill="#333"/>
+                      <rect x="44" y="26" width="4" height="4" fill="#333"/>
+                      <rect x="34" y="34" width="4" height="4" fill="#333"/>
+                      <rect x="44" y="34" width="16" height="4" fill="#333"/>
+                      <rect x="34" y="42" width="8" height="4" fill="#333"/>
+                      <rect x="34" y="50" width="4" height="8" fill="#333"/>
+                      <rect x="44" y="50" width="8" height="8" fill="#333"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="vcard-content" style="position:relative;z-index:2;padding-right:90px">
+                  <div class="vcard-details">
+                    <span id="vc-phone">📱 +91 98765 43210</span>
+                    <span id="vc-email">✉️ you@business.com</span>
+                    <span id="vc-website">🌐 www.yoursite.com</span>
+                    <span id="vc-location">📍 Mumbai, Maharashtra</span>
+                  </div>
+                  <div class="vcard-social" style="margin-top:0.4rem;flex-wrap:wrap;gap:0.5rem">
+                    <span id="vc-linkedin" style="color:rgba(255,255,255,0.65);font-size:0.7rem">💼 LinkedIn</span>
+                    <span id="vc-insta" style="color:rgba(255,255,255,0.65);font-size:0.7rem">📸 Instagram</span>
+                  </div>
+                </div>
+              </div>
+              <p style="font-size:0.78rem;color:var(--gray-400);margin-top:0.75rem;text-align:center">Card updates live as you type ↑</p>
+              <div style="margin-top:1.25rem;padding:1rem;background:var(--off-white);border-radius:var(--radius-sm);font-size:0.85rem">
+                <strong style="display:block;margin-bottom:0.5rem">Sharing Options:</strong>
+                <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
+                  <button class="btn btn-outline btn-sm" onclick="shareWhatsApp()" style="color:var(--green);border-color:var(--green)">📤 Share on WhatsApp</button>
+                  <button class="btn btn-outline btn-sm" onclick="copyVCardLink()" style="color:var(--navy);border-color:var(--gray-300)">🔗 Copy Link</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /tabs -->
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-top">
+      <div class="footer-brand"><a href="../index.html" class="navbar-brand"><div class="brand-logo">M</div><span class="brand-text">MSME<span>Hub</span></span></a><p>India's most comprehensive MSME resource platform.</p></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="schemes.html">Govt Schemes</a></li><li><a href="tools.html">Business Tools</a></li><li><a href="guidebook.html">Guidebooks</a></li><li><a href="finance.html">Finance</a></li></ul></div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="tax.html">Tax &amp; Certificates</a></li><li><a href="compliance.html">Compliance</a></li><li><a href="growth.html">Growth</a></li><li><a href="connect.html">Connect</a></li></ul></div>
+      <div class="footer-col"><h4>Official Portals</h4><ul><li><a href="https://udyamregistration.gov.in" target="_blank">Udyam</a></li><li><a href="https://www.gst.gov.in" target="_blank">GST Portal</a></li><li><a href="https://www.incometax.gov.in" target="_blank">Income Tax</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 MSMEHub. For informational purposes only.</span><span>Built for 6.3 Crore Indian MSMEs 🚀</span></div>
+  </div>
+</footer>
+
+<script>
+// ─── NAV ───
+document.getElementById('hamburger')?.addEventListener('click',()=>document.getElementById('navLinks')?.classList.toggle('open'));
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks')?.classList.remove('open')));
+window.addEventListener('scroll',()=>{const p=document.getElementById('progressBar');if(p)p.style.width=((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100)+'%';});
+
+// ─── TABS ───
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab)?.classList.add('active');
+  });
+});
+
+// ─── HELPERS ───
+const fmt=v=>'₹'+parseFloat(v||0).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');
+const fmtN=v=>parseFloat(v||0).toLocaleString('en-IN');
+
+// ─── EMI ───
+function calcEMI(){
+  const P=parseFloat(document.getElementById('emiPrincipal')?.value)||0;
+  const R=parseFloat(document.getElementById('emiRate')?.value)||0;
+  const N=parseFloat(document.getElementById('emiTenure')?.value)||0;
+  document.getElementById('emiRateVal').textContent=R+'%';
+  document.getElementById('emiTenureVal').textContent=N+' months';
+  document.getElementById('emiPrincipalVal').textContent='₹'+fmtN(P);
+  document.getElementById('emiPrincipalShow').textContent='₹'+fmtN(P);
+  if(P&&R&&N){
+    const r=R/12/100;
+    const emi=(P*r*Math.pow(1+r,N))/(Math.pow(1+r,N)-1);
+    const total=emi*N; const interest=total-P;
+    document.getElementById('emiResult').textContent='₹'+Math.round(emi).toLocaleString('en-IN');
+    document.getElementById('emiTotal').textContent='₹'+Math.round(total).toLocaleString('en-IN');
+    document.getElementById('emiInterest').textContent='₹'+Math.round(interest).toLocaleString('en-IN');
+    document.getElementById('emiSubNote').textContent=`For ₹${fmtN(P)} @ ${R}% for ${N} months`;
+    // Amort
+    buildAmort(P,r,emi,N);
+  }
+}
+function buildAmort(P,r,emi,N){
+  const tb=document.getElementById('amortBody'); if(!tb) return;
+  let bal=P; tb.innerHTML='';
+  for(let i=1;i<=Math.min(12,N);i++){
+    const int=bal*r; const prin=emi-int; const close=bal-prin;
+    tb.innerHTML+=`<tr><td>${i}</td><td>₹${Math.round(bal).toLocaleString('en-IN')}</td><td>₹${Math.round(emi).toLocaleString('en-IN')}</td><td>₹${Math.round(prin).toLocaleString('en-IN')}</td><td>₹${Math.round(int).toLocaleString('en-IN')}</td><td>₹${Math.max(0,Math.round(close)).toLocaleString('en-IN')}</td></tr>`;
+    bal=close;
+  }
+  if(N>12) tb.innerHTML+=`<tr><td colspan="6" style="text-align:center;color:var(--gray-400);font-size:0.82rem">…${N-12} more months</td></tr>`;
+}
+calcEMI();
+
+// ─── OD ───
+function calcOD(){
+  const L=parseFloat(document.getElementById('odLimit')?.value)||0;
+  const R=parseFloat(document.getElementById('odRate')?.value)||0;
+  const U=parseFloat(document.getElementById('odUtil')?.value)||0;
+  document.getElementById('odRateVal').textContent=R+'%';
+  document.getElementById('odUtilVal').textContent=U+'%';
+  document.getElementById('odLimitVal').textContent='₹'+fmtN(L);
+  if(L&&R){
+    const drawn=L*(U/100);
+    const monthly=(drawn*R/100)/12;
+    document.getElementById('odResult').textContent='₹'+Math.round(monthly).toLocaleString('en-IN');
+    document.getElementById('odDrawn').textContent='₹'+Math.round(drawn).toLocaleString('en-IN');
+    document.getElementById('odAnnual').textContent='₹'+Math.round(monthly*12).toLocaleString('en-IN');
+    document.getElementById('odEffective').textContent=R+'% p.a.';
+  }
+}
+calcOD();
+
+// ─── GST TABLE ───
+let gstRows=[{sno:1,hsn:'',particular:'',qty:1,rate:0,gstRate:18}];
+function renderGSTTable(){
+  const inter=document.getElementById('gstTxType')?.value==='inter';
+  const tbody=document.getElementById('gstTableBody'); if(!tbody) return;
+  tbody.innerHTML='';
+  let taxable=0,cgst=0,sgst=0,igst=0,total=0;
+  gstRows.forEach((row,i)=>{
+    const t=row.qty*row.rate; const g=t*row.gstRate/100;
+    const c=inter?0:g/2; const s=inter?0:g/2; const ig=inter?g:0;
+    taxable+=t; cgst+=c; sgst+=s; igst+=ig; total+=t+g;
+    tbody.innerHTML+=`<tr>
+      <td>${row.sno}</td>
+      <td><input value="${row.hsn}" onchange="gstRows[${i}].hsn=this.value" placeholder="1234" style="width:90px;border:1px solid var(--gray-200);border-radius:5px;padding:0.3rem 0.5rem;font-size:0.85rem"></td>
+      <td><input value="${row.particular}" onchange="gstRows[${i}].particular=this.value" placeholder="Item description" style="width:100%;border:1px solid var(--gray-200);border-radius:5px;padding:0.3rem 0.5rem;font-size:0.85rem"></td>
+      <td><input type="number" value="${row.qty}" min="1" onchange="gstRows[${i}].qty=+this.value;renderGSTTable()" style="width:60px;border:1px solid var(--gray-200);border-radius:5px;padding:0.3rem 0.4rem;font-size:0.85rem"></td>
+      <td><input type="number" value="${row.rate}" min="0" step="0.01" onchange="gstRows[${i}].rate=+this.value;renderGSTTable()" style="width:90px;border:1px solid var(--gray-200);border-radius:5px;padding:0.3rem 0.5rem;font-size:0.85rem"></td>
+      <td><strong>${fmt(t)}</strong></td>
+      <td><select onchange="gstRows[${i}].gstRate=+this.value;renderGSTTable()" style="border:1px solid var(--gray-200);border-radius:5px;padding:0.3rem 0.4rem;font-size:0.85rem">
+        ${[0,5,12,18,28].map(r=>`<option value="${r}"${r===row.gstRate?' selected':''}>${r}%</option>`).join('')}
+      </select></td>
+      ${inter?`<td colspan="2" style="text-align:center"><strong>${fmt(ig)}</strong> IGST</td>`:`<td>${fmt(c)}</td><td>${fmt(s)}</td>`}
+      <td><strong>${fmt(t+g)}</strong></td>
+      <td><button onclick="removeGSTRow(${i})" style="background:#FEF2F2;border:1px solid #EF4444;color:#EF4444;border-radius:4px;padding:0.2rem 0.4rem;cursor:pointer;font-size:0.85rem">✕</button></td>
+    </tr>`;
+  });
+  document.getElementById('gstTaxable').textContent=fmt(taxable);
+  document.getElementById('gstCGST').textContent=inter?fmt(igst)+' (IGST)':fmt(cgst);
+  document.getElementById('gstSGST').textContent=inter?'—':fmt(sgst);
+  document.getElementById('gstTotal').textContent=fmt(total);
+}
+function addGSTRow(){gstRows.push({sno:gstRows.length+1,hsn:'',particular:'',qty:1,rate:0,gstRate:18});renderGSTTable();}
+function removeGSTRow(i){gstRows.splice(i,1);gstRows.forEach((r,j)=>r.sno=j+1);renderGSTTable();}
+function clearGSTTable(){gstRows=[{sno:1,hsn:'',particular:'',qty:1,rate:0,gstRate:18}];renderGSTTable();}
+function printGST(){const w=window.open('','','width=900,height=700');w.document.write(`<html><head><title>GST Calculation</title><link rel="stylesheet" href="../css/style.css"><style>body{padding:2rem;background:white}</style></head><body><h2 style="font-family:'Syne',sans-serif">GST Calculation</h2>${document.querySelector('.gst-table-wrapper').outerHTML}${document.querySelector('.gst-summary').outerHTML}</body></html>`);w.document.close();setTimeout(()=>w.print(),400);}
+renderGSTTable();
+
+// ─── INVOICE ───
+let invoiceItems=[{sno:1,particular:'',qty:1,rate:0,disc:0}];
+function renderInvoice(){
+  const g=id=>document.getElementById(id)?.value||'';
+  // Update display
+  document.getElementById('d-gst').textContent=g('invGST')||'—';
+  document.getElementById('d-gst2').textContent=g('invGST')?'GSTIN: '+g('invGST'):'';
+  document.getElementById('d-firm').textContent=g('invFirmName')||'Your Business Name';
+  document.getElementById('d-fromAddr').textContent=g('invFromAddr');
+  document.getElementById('d-invno').textContent=g('invInvNo')||'—';
+  document.getElementById('d-date').textContent=g('invDate')?new Date(g('invDate')).toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}):'—';
+  const dueEl=document.getElementById('d-due-row');
+  if(g('invDueDate')){dueEl.style.display='';document.getElementById('d-due').textContent=new Date(g('invDueDate')).toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});}else dueEl.style.display='none';
+  const poEl=document.getElementById('d-po-row');
+  if(g('invPO')){poEl.style.display='';document.getElementById('d-po').textContent=g('invPO');}else poEl.style.display='none';
+  document.getElementById('d-billto').textContent=g('invBillTo')||'Client Name';
+  document.getElementById('d-billgst').textContent=g('invBillGST')?'GSTIN: '+g('invBillGST'):'';
+  document.getElementById('d-billaddr').textContent=g('invBillAddr');
+  document.getElementById('d-bank').textContent=g('invBank');
+  document.getElementById('d-terms').textContent=g('invTerms');
+  document.getElementById('d-contact').textContent=g('invContact');
+  const inter=g('invTxType')==='inter';
+  document.getElementById('taxColHead').textContent=inter?'IGST':'CGST+SGST';
+  // Items
+  const tbody=document.getElementById('invoiceItemsBody');
+  if(!tbody) return;
+  let subtotal=0; tbody.innerHTML='';
+  invoiceItems.forEach(item=>{
+    const amt=item.qty*item.rate*(1-item.disc/100); subtotal+=amt;
+    const gRate=parseFloat(g('invGSTRate'))||18;
+    const gAmt=amt*gRate/100;
+    tbody.innerHTML+=`<tr><td>${item.sno}</td><td>${item.particular||'—'}</td><td>${item.qty}</td><td>₹${item.rate.toFixed(2)}</td><td>${item.disc}%</td><td>₹${amt.toFixed(2)}</td><td>${inter?'₹'+(gAmt).toFixed(2):'₹'+(gAmt/2).toFixed(2)+'+₹'+(gAmt/2).toFixed(2)}</td><td><strong>₹${(amt+gAmt).toFixed(2)}</strong></td></tr>`;
+  });
+  const gRate=parseFloat(g('invGSTRate'))||18;
+  const gAmt=subtotal*gRate/100; const grand=subtotal+gAmt;
+  document.getElementById('d-subtotal').textContent=fmt(subtotal);
+  if(inter){
+    document.getElementById('d-cgst-row').style.display='none';
+    document.getElementById('d-sgst-row').style.display='none';
+    document.getElementById('d-igst-row').style.display='';
+    document.getElementById('d-igst').textContent=fmt(gAmt);
+  } else {
+    document.getElementById('d-cgst-row').style.display='';
+    document.getElementById('d-sgst-row').style.display='';
+    document.getElementById('d-igst-row').style.display='none';
+    document.getElementById('d-cgst').textContent=fmt(gAmt/2);
+    document.getElementById('d-sgst').textContent=fmt(gAmt/2);
+  }
+  document.getElementById('d-grand').textContent=fmt(grand);
+}
+function addInvoiceItem(){invoiceItems.push({sno:invoiceItems.length+1,particular:'',qty:1,rate:0,disc:0});renderInvoiceInputs();renderInvoice();}
+function removeInvoiceItem(i){invoiceItems.splice(i,1);invoiceItems.forEach((r,j)=>r.sno=j+1);renderInvoiceInputs();renderInvoice();}
+function renderInvoiceInputs(){
+  const c=document.getElementById('invoiceItemsInputs'); if(!c) return;
+  c.innerHTML=invoiceItems.map((item,i)=>`
+    <div style="display:grid;grid-template-columns:2fr 0.8fr 1fr 0.8fr auto;gap:0.4rem;align-items:center">
+      <input class="form-input" placeholder="Description" value="${item.particular}" oninput="invoiceItems[${i}].particular=this.value;renderInvoice()" style="font-size:0.85rem;padding:0.5rem 0.75rem">
+      <input class="form-input" type="number" placeholder="Qty" value="${item.qty}" min="1" oninput="invoiceItems[${i}].qty=+this.value;renderInvoice()" style="font-size:0.85rem;padding:0.5rem 0.75rem">
+      <input class="form-input" type="number" placeholder="Rate ₹" value="${item.rate}" min="0" step="0.01" oninput="invoiceItems[${i}].rate=+this.value;renderInvoice()" style="font-size:0.85rem;padding:0.5rem 0.75rem">
+      <input class="form-input" type="number" placeholder="Disc%" value="${item.disc}" min="0" max="100" oninput="invoiceItems[${i}].disc=+this.value;renderInvoice()" style="font-size:0.85rem;padding:0.5rem 0.75rem">
+      <button onclick="removeInvoiceItem(${i})" style="background:#FEF2F2;border:1px solid #EF4444;color:#EF4444;border-radius:6px;padding:0.45rem 0.6rem;cursor:pointer;font-size:0.9rem">✕</button>
+    </div>`).join('');
+}
+function printInvoice(){
+  const w=window.open('','','width=900,height=700');
+  w.document.write(`<html><head><title>Invoice</title><link rel="stylesheet" href="../css/style.css"><style>body{padding:2rem;background:white}@media print{body{padding:0}}</style></head><body>${document.getElementById('invoicePreview').outerHTML}<script>window.onload=()=>setTimeout(()=>window.print(),300)<\/script></body></html>`);
+  w.document.close();
+}
+renderInvoiceInputs();
+renderInvoice();
+// Set today's date
+document.getElementById('invDate').value=new Date().toISOString().split('T')[0];
+renderInvoice();
+
+// ─── VCARD ───
+function updateVCard(){
+  const g=id=>document.getElementById(id)?.value||'';
+  document.getElementById('vc-name').textContent=g('vcardName')||'Your Name';
+  document.getElementById('vc-lob').textContent=g('vcardLOB')||'Designation / Business';
+  document.getElementById('vc-phone').textContent=g('vcardPhone')?'📱 '+g('vcardPhone'):'📱 +91 98765 43210';
+  document.getElementById('vc-email').textContent=g('vcardEmail')?'✉️ '+g('vcardEmail'):'✉️ you@business.com';
+  document.getElementById('vc-website').textContent=g('vcardWebsite')?'🌐 '+g('vcardWebsite'):'🌐 www.yoursite.com';
+  document.getElementById('vc-location').textContent=g('vcardLocation')?'📍 '+g('vcardLocation'):'📍 Location';
+  document.getElementById('vc-linkedin').textContent=g('vcardLinkedIn')?'💼 '+g('vcardLinkedIn'):'💼 LinkedIn';
+  document.getElementById('vc-insta').textContent=g('vcardInsta')?'📸 '+g('vcardInsta'):'📸 Instagram';
+}
+document.querySelectorAll('.bg-swatch').forEach(sw=>{
+  sw.addEventListener('click',()=>{
+    document.querySelectorAll('.bg-swatch').forEach(s=>s.style.border='2px solid transparent');
+    sw.style.border='2px solid var(--saffron)';
+    document.getElementById('vcardBG').style.background=sw.dataset.bg;
+  });
+});
+function downloadCard(){alert('To download: Right-click on the card preview → Inspect → Screenshot, or use browser print (Ctrl+P) and save as PDF.');}
+function shareWhatsApp(){
+  const g=id=>document.getElementById(id)?.value||'';
+  const text=`Hi! I'm ${g('vcardName')} (${g('vcardLOB')}). Contact: ${g('vcardPhone')} | ${g('vcardEmail')} | ${g('vcardWebsite')}`;
+  window.open('https://wa.me/?text='+encodeURIComponent(text),'_blank');
+}
+function copyVCardLink(){navigator.clipboard.writeText(window.location.href).then(()=>alert('Link copied!'));}
+</script>
+</body>
+</html>

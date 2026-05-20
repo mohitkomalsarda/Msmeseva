@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect With Us — MSMEHub | MSME Expert Guidance</title>
+  <meta name="description" content="Connect with MSMEHub experts for personalised guidance on government schemes, finance, compliance, and business growth for your MSME.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FF6B00'/><text y='.9em' font-size='70' x='15'>M</text></svg>">
+  <style>
+    .expertise-card {
+      background: white;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .expertise-card:hover {
+      border-color: var(--saffron);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+    .expertise-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    .expertise-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      color: var(--navy);
+    }
+    .expertise-card p {
+      font-size: 0.86rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+    .faq-item {
+      background: white;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .faq-item.open {
+      border-color: var(--saffron);
+    }
+    .faq-question {
+      padding: 1.1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--navy);
+      gap: 1rem;
+    }
+    .faq-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      transition: var(--transition);
+      color: var(--saffron);
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      display: none;
+      padding: 0 1.25rem 1.25rem;
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      border-top: 1px solid var(--gray-100);
+      padding-top: 1rem;
+    }
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+    .success-banner {
+      display: none;
+      background: var(--green-pale);
+      border: 1.5px solid var(--green);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .success-banner.show {
+      display: block;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      z-index: 500;
+      transition: var(--transition);
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.5);
+    }
+    .stat-card {
+      background: white;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .stat-card .num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--saffron);
+    }
+    .stat-card .lbl {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      margin-top: 0.25rem;
+    }
+    .team-card {
+      background: white;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .team-card:hover {
+      border-color: var(--saffron);
+      box-shadow: var(--shadow);
+    }
+    .team-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--saffron), var(--gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin: 0 auto 1rem;
+    }
+    .team-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--navy);
+    }
+    .team-card .role {
+      font-size: 0.82rem;
+      color: var(--saffron);
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+    .team-card .bio {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand"><div class="brand-logo">M</div><span class="brand-text">MSME<span>Hub</span></span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="schemes.html">Govt Schemes</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="guidebook.html">Guidebook</a></li>
+    <li><a href="finance.html">Finance</a></li>
+    <li><a href="tax.html">Tax &amp; Cert.</a></li>
+    <li><a href="compliance.html">Compliance</a></li>
+    <li><a href="growth.html">Growth</a></li>
+    <li><a href="connect.html" class="active nav-cta btn">Connect</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<main class="main-content">
+
+  <!-- HERO -->
+  <section style="background:linear-gradient(135deg,var(--navy),var(--navy-mid));padding:4rem 2rem 3rem;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 80% 50%,rgba(255,107,0,0.13),transparent 60%)"></div>
+    <div class="container" style="position:relative;z-index:1">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem">
+        <a href="../index.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem">Home</a>
+        <span style="color:rgba(255,255,255,0.3)">›</span>
+        <span style="color:var(--saffron);font-size:0.85rem">Connect With Us</span>
+      </div>
+      <h1 style="font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:white;margin-bottom:0.75rem">Talk to an MSME Expert</h1>
+      <p style="color:rgba(255,255,255,0.65);max-width:620px;font-size:1rem">Our team of MSME finance, compliance, and growth specialists is ready to help you navigate challenges, access government schemes, and scale your business.</p>
+      <div style="display:flex;gap:2rem;margin-top:2rem;flex-wrap:wrap">
+        <div style="text-align:center"><div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--saffron)">24 hrs</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.05em">Response Time</div></div>
+        <div style="text-align:center"><div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--saffron)">Free</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.05em">First Consultation</div></div>
+        <div style="text-align:center"><div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--saffron)">1000+</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.05em">MSMEs Helped</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="section">
+    <div class="container">
+
+      <!-- CONTACT GRID -->
+      <div class="contact-grid" style="margin-bottom:4rem">
+
+        <!-- FORM -->
+        <div>
+          <div class="section-header" style="text-align:left;margin-bottom:1.5rem">
+            <span class="section-tag">Get In Touch</span>
+            <h2 style="font-size:1.8rem">Send Us Your Query</h2>
+            <p style="text-align:left">Fill the form below and our team will get back to you within 24 business hours.</p>
+          </div>
+
+          <form class="contact-form" id="contactForm" onsubmit="submitForm(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name *</label>
+                <input class="form-input" type="text" id="cf-name" placeholder="Rahul Sharma" required>
+              </div>
+              <div class="form-group">
+                <label>Business Name *</label>
+                <input class="form-input" type="text" id="cf-biz" placeholder="XYZ Enterprises" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Mobile Number *</label>
+                <input class="form-input" type="tel" id="cf-phone" placeholder="+91 98765 43210" pattern="[0-9+\s\-]{10,15}" required>
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input class="form-input" type="email" id="cf-email" placeholder="you@business.com">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>MSME Category *</label>
+                <select class="form-input" id="cf-cat" required>
+                  <option value="">Select Category</option>
+                  <option>Micro Enterprise (Turnover up to ₹5 Cr)</option>
+                  <option>Small Enterprise (Turnover ₹5–₹50 Cr)</option>
+                  <option>Medium Enterprise (Turnover ₹50–₹250 Cr)</option>
+                  <option>Startup (DPIIT Recognised or aspiring)</option>
+                  <option>Prospective Entrepreneur</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Industry / Sector *</label>
+                <select class="form-input" id="cf-sector" required>
+                  <option value="">Select Sector</option>
+                  <option>Manufacturing</option>
+                  <option>Trading / Distribution</option>
+                  <option>Services</option>
+                  <option>Food Processing / F&amp;B</option>
+                  <option>Textile / Garments</option>
+                  <option>Technology / IT / Fintech</option>
+                  <option>Healthcare / Pharma</option>
+                  <option>Construction / Real Estate</option>
+                  <option>Agriculture / Agri-processing</option>
+                  <option>Export / Import</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Annual Turnover (Approximate)</label>
+              <select class="form-input" id="cf-turnover">
+                <option value="">Select Range</option>
+                <option>Below ₹50 Lakh</option>
+                <option>₹50L – ₹1 Crore</option>
+                <option>₹1 Cr – ₹5 Crore</option>
+                <option>₹5 Cr – ₹25 Crore</option>
+                <option>₹25 Cr – ₹100 Crore</option>
+                <option>Above ₹100 Crore</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Area of Help Required *</label>
+              <select class="form-input" id="cf-topic" required>
+                <option value="">Select Topic</option>
+                <option>Government Scheme — Eligibility &amp; Application</option>
+                <option>Finance / Loan / Credit Facility</option>
+                <option>GST Registration or Compliance</option>
+                <option>Income Tax / ITR Filing</option>
+                <option>Udyam / MSME Registration</option>
+                <option>Export / Import / IEC</option>
+                <option>Business Growth / Digital Marketing</option>
+                <option>Labour / HR Compliance</option>
+                <option>Business Automation / Software</option>
+                <option>Startup Registration / Funding</option>
+                <option>Other — Custom Query</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Preferred Contact Time</label>
+              <select class="form-input" id="cf-time">
+                <option>Morning (9 AM – 12 PM)</option>
+                <option>Afternoon (12 PM – 3 PM)</option>
+                <option>Evening (3 PM – 7 PM)</option>
+                <option>Any Time</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Tell us about your query *</label>
+              <textarea class="form-input" id="cf-msg" rows="4" placeholder="Briefly describe your business situation, the challenge you're facing, and what specific help you're looking for. More detail helps us give better guidance." required></textarea>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.75rem">
+              <input type="checkbox" id="cf-consent" style="width:18px;height:18px;flex-shrink:0" required>
+              <label for="cf-consent" style="font-size:0.82rem;color:var(--gray-600);cursor:pointer">I consent to MSMEHub contacting me via phone/WhatsApp/email with guidance and updates. I understand my data will not be sold to third parties.</label>
+            </div>
+            <button type="submit" class="btn btn-primary" style="align-self:flex-start;padding:0.9rem 2rem;font-size:1rem">
+              Submit Query →
+            </button>
+          </form>
+
+          <div class="success-banner" id="successBanner">
+            <div style="font-size:3rem;margin-bottom:0.75rem">✅</div>
+            <h3 style="font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--green);margin-bottom:0.5rem">Query Submitted Successfully!</h3>
+            <p style="color:var(--gray-600);font-size:0.95rem">Our team will review your query and reach out within <strong>24 business hours</strong>. For urgent queries, WhatsApp us at <strong>+91 98765 43210</strong>.</p>
+          </div>
+        </div>
+
+        <!-- CONTACT INFO PANEL -->
+        <div>
+          <!-- Contact Card -->
+          <div class="contact-info" style="margin-bottom:1.5rem">
+            <h3>Contact Information</h3>
+            <div class="contact-item">
+              <div class="contact-item-icon">📱</div>
+              <div>
+                <h4>WhatsApp / Call</h4>
+                <p>+91 98765 43210</p>
+                <p style="font-size:0.8rem;opacity:0.6;margin-top:0.2rem">Mon–Sat: 9 AM – 7 PM IST</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">📧</div>
+              <div>
+                <h4>Email</h4>
+                <p>support@msmehub.in</p>
+                <p style="font-size:0.8rem;opacity:0.6;margin-top:0.2rem">Response within 24 hours</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">💼</div>
+              <div>
+                <h4>LinkedIn</h4>
+                <p>linkedin.com/company/msmehub</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div>
+                <h4>Registered Office</h4>
+                <p>Mumbai, Maharashtra, India</p>
+              </div>
+            </div>
+            <div style="margin-top:1.5rem">
+              <a href="https://wa.me/919876543210?text=Hi%20MSMEHub%2C%20I%20need%20help%20with%20my%20MSME" target="_blank" class="btn btn-green" style="width:100%;justify-content:center;padding:0.9rem">
+                💬 Chat on WhatsApp Now
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div style="background:var(--off-white);border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:1.5rem;margin-bottom:1.5rem">
+            <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:1rem;color:var(--navy)">Quick Access</h3>
+            <div style="display:flex;flex-direction:column;gap:0.5rem">
+              <a href="schemes.html" style="display:flex;align-items:center;gap:0.75rem;padding:0.65rem 0.9rem;background:white;border:1px solid var(--gray-200);border-radius:var(--radius-sm);text-decoration:none;color:var(--navy);font-size:0.88rem;transition:var(--transition)" onmouseover="this.style.borderColor='var(--saffron)'" onmouseout="this.style.borderColor='var(--gray-200)'">
+                <span>🏛️</span> Check Government Scheme Eligibility
+              </a>
+              <a href="tools.html" style="display:flex;align-items:center;gap:0.75rem;padding:0.65rem 0.9rem;background:white;border:1px solid var(--gray-200);border-radius:var(--radius-sm);text-decoration:none;color:var(--navy);font-size:0.88rem;transition:var(--transition)" onmouseover="this.style.borderColor='var(--saffron)'" onmouseout="this.style.borderColor='var(--gray-200)'">
+                <span>🧮</span> Use Free Business Tools
+              </a>
+              <a href="finance.html" style="display:flex;align-items:center;gap:0.75rem;padding:0.65rem 0.9rem;background:white;border:1px solid var(--gray-200);border-radius:var(--radius-sm);text-decoration:none;color:var(--navy);font-size:0.88rem;transition:var(--transition)" onmouseover="this.style.borderColor='var(--saffron)'" onmouseout="this.style.borderColor='var(--gray-200)'">
+                <span>💰</span> Understand Finance Options
+              </a>
+              <a href="compliance.html" style="display:flex;align-items:center;gap:0.75rem;padding:0.65rem 0.9rem;background:white;border:1px solid var(--gray-200);border-radius:var(--radius-sm);text-decoration:none;color:var(--navy);font-size:0.88rem;transition:var(--transition)" onmouseover="this.style.borderColor='var(--saffron)'" onmouseout="this.style.borderColor='var(--gray-200)'">
+                <span>⚖️</span> View Compliance Calendar
+              </a>
+            </div>
+          </div>
+
+          <!-- Working Hours -->
+          <div style="background:var(--navy);border-radius:var(--radius);padding:1.5rem;color:white">
+            <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:1rem">Support Hours</h3>
+            <div style="display:flex;flex-direction:column;gap:0.6rem;font-size:0.88rem">
+              <div style="display:flex;justify-content:space-between"><span style="opacity:0.65">Monday – Friday</span><strong>9:00 AM – 7:00 PM</strong></div>
+              <div style="display:flex;justify-content:space-between"><span style="opacity:0.65">Saturday</span><strong>10:00 AM – 5:00 PM</strong></div>
+              <div style="display:flex;justify-content:space-between"><span style="opacity:0.65">Sunday</span><strong style="color:var(--saffron)">Closed</strong></div>
+              <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:0.75rem;margin-top:0.25rem;font-size:0.82rem;opacity:0.6">All times in IST. WhatsApp messages outside hours are read next business day.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXPERTISE AREAS -->
+      <div style="margin-bottom:4rem">
+        <div class="section-header">
+          <span class="section-tag">Our Expertise</span>
+          <h2>What Our Team Can Help With</h2>
+          <p>Specialised guidance across every critical area of MSME business management.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem">
+          <div class="expertise-card">
+            <div class="expertise-icon">🏛️</div>
+            <h3>Govt Scheme Navigation</h3>
+            <p>Identify the right schemes for your business, check eligibility, prepare applications, and liaise with implementing agencies.</p>
+          </div>
+          <div class="expertise-card">
+            <div class="expertise-icon">💰</div>
+            <h3>Finance &amp; Credit Access</h3>
+            <p>Working capital, term loans, CGTMSE, trade finance — we help you prepare the right documentation and approach the right bank.</p>
+          </div>
+          <div class="expertise-card">
+            <div class="expertise-icon">🧾</div>
+            <h3>GST &amp; Tax Compliance</h3>
+            <p>GST registration, return filing, ITC optimisation, advance tax planning, presumptive taxation — guided support throughout.</p>
+          </div>
+          <div class="expertise-card">
+            <div class="expertise-icon">⚖️</div>
+            <h3>Regulatory Compliance</h3>
+            <p>PF, ESI, labour laws, environmental clearances, ROC filings — stay compliant and penalty-free with our compliance calendar.</p>
+          </div>
+          <div class="expertise-card">
+            <div class="expertise-icon">🌍</div>
+            <h3>Export / Import Setup</h3>
+            <p>IEC registration, AD code, export documentation, LC handling, ECGC, DGFT licences — complete trade facilitation.</p>
+          </div>
+          <div class="expertise-card">
+            <div class="expertise-icon">📈</div>
+            <h3>Business Growth Strategy</h3>
+            <p>Digital marketing setup, GeM registration, website creation, distribution strategy — practical growth support for MSMEs.</p>
+          </div>
+          <div class="expertise-card">
+            <div class="expertise-icon">🚀</div>
+            <h3>Startup Support</h3>
+            <p>DPIIT recognition, funding strategy, pitch deck preparation, incubator connections, angel and VC introductions.</p>
+          </div>
+          <div class="expertise-card">
+            <div class="expertise-icon">🏭</div>
+            <h3>Udyam &amp; Registrations</h3>
+            <p>Udyam, FSSAI, IEC, LEI, trademark, shop act, factory license — all registrations handled with accuracy and speed.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEAM SECTION -->
+      <div style="margin-bottom:4rem">
+        <div class="section-header">
+          <span class="section-tag">Our Team</span>
+          <h2>MSME Specialists Ready to Help</h2>
+          <p>Our team brings deep expertise in banking, taxation, compliance, and business growth — all focused on Indian MSMEs.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem">
+          <div class="team-card">
+            <div class="team-avatar">👨‍💼</div>
+            <h3>Arjun Mehta</h3>
+            <div class="role">MSME Finance Specialist</div>
+            <div class="bio">15+ years in MSME banking. Expert in credit structuring, CGTMSE, and working capital optimisation for manufacturing and trading MSMEs.</div>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">👩‍💼</div>
+            <h3>Priya Nair</h3>
+            <div class="role">GST &amp; Taxation Expert</div>
+            <div class="bio">Chartered Accountant with 10 years specialising in GST compliance, IT returns, and tax optimisation for MSMEs and small businesses.</div>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">👨‍💻</div>
+            <h3>Vikas Sharma</h3>
+            <div class="role">Export &amp; Trade Expert</div>
+            <div class="bio">12 years in trade finance, DGFT, and export documentation. Has helped 200+ MSMEs go from domestic to international markets.</div>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">👩‍🏫</div>
+            <h3>Ananya Singh</h3>
+            <div class="role">Compliance &amp; HR Specialist</div>
+            <div class="bio">Labour law compliance, PF/ESI, Factories Act, and ROC filings — keeping MSMEs compliant across all statutory requirements.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATS -->
+      <div style="margin-bottom:4rem">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1.25rem">
+          <div class="stat-card"><div class="num">1,000+</div><div class="lbl">MSMEs Assisted</div></div>
+          <div class="stat-card"><div class="num">₹50 Cr+</div><div class="lbl">Finance Facilitated</div></div>
+          <div class="stat-card"><div class="num">500+</div><div class="lbl">Scheme Applications</div></div>
+          <div class="stat-card"><div class="num">98%</div><div class="lbl">Satisfaction Rate</div></div>
+          <div class="stat-card"><div class="num">18+</div><div class="lbl">States Covered</div></div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div style="margin-bottom:4rem">
+        <div class="section-header">
+          <span class="section-tag">FAQ</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;max-width:860px;margin:0 auto">
+
+          <div class="faq-item" onclick="toggleFAQ(this)">
+            <div class="faq-question">Is the consultation really free? <span class="faq-icon">+</span></div>
+            <div class="faq-answer">Yes — the first consultation (up to 30 minutes) is completely free. We believe every MSME should have access to quality guidance without financial barriers. For ongoing support, implementation, or detailed project work, we offer affordable retainer packages.</div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFAQ(this)">
+            <div class="faq-question">How quickly will someone get back to me? <span class="faq-icon">+</span></div>
+            <div class="faq-answer">We respond within 24 business hours to all form submissions. For WhatsApp queries during business hours (9 AM – 7 PM IST, Mon–Sat), responses are typically within 2–4 hours. Urgent queries are prioritised — please indicate urgency in your message.</div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFAQ(this)">
+            <div class="faq-question">Can you help with loan applications? <span class="faq-icon">+</span></div>
+            <div class="faq-answer">Yes. We provide guidance on which loan product is right for your business, how to prepare documentation, which banks / NBFCs to approach, and how to structure your application for maximum approval chances. We do not charge for basic guidance. For complex cases involving CGTMSE, project loans, or working capital restructuring, we may offer a paid facilitation service.</div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFAQ(this)">
+            <div class="faq-question">I have no accounting background. Can you help me with GST and tax? <span class="faq-icon">+</span></div>
+            <div class="faq-answer">Absolutely. We specialise in explaining complex tax and compliance requirements in simple, jargon-free language. Our team can walk you through GST registration, monthly filing, input tax credit claims, advance tax payments, and ITR filing — step by step. We can also connect you with verified local CAs for ongoing compliance if needed.</div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFAQ(this)">
+            <div class="faq-question">Do you cover all states across India? <span class="faq-icon">+</span></div>
+            <div class="faq-answer">Yes — we serve MSMEs across all 28 states and 8 UTs of India. Central government schemes (CGTMSE, ECLGS, PMEGP, Startup India etc.) are national in scope. For state-specific schemes, we provide guidance relevant to your state's policies and portals.</div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFAQ(this)">
+            <div class="faq-question">I'm just starting out — is MSMEHub relevant for me? <span class="faq-icon">+</span></div>
+            <div class="faq-answer">Yes — especially for first-time entrepreneurs! We can guide you on entity formation (proprietorship vs Pvt Ltd), Udyam registration, basic compliance setup, initial banking relationship, and how to access startup / MSME schemes. Getting the foundation right saves significant trouble later.</div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFAQ(this)">
+            <div class="faq-question">Is my business information kept confidential? <span class="faq-icon">+</span></div>
+            <div class="faq-answer">Yes — strict confidentiality is maintained. Your business details, financial information, and queries are never shared with third parties without your explicit consent. Our team operates under confidentiality norms standard to financial and consulting services.</div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFAQ(this)">
+            <div class="faq-question">Can you help me list on GeM (Government e-Marketplace)? <span class="faq-icon">+</span></div>
+            <div class="faq-answer">Yes. We assist with GeM seller registration, product/service listing, category selection, and bidding strategy. We also help ensure your Udyam registration is linked correctly for the MSE reservation benefits on GeM.</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/919876543210?text=Hi%20MSMEHub%2C%20I%20need%20help%20with%20my%20MSME" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="../index.html" class="navbar-brand"><div class="brand-logo">M</div><span class="brand-text">MSME<span>Hub</span></span></a>
+        <p>India's most comprehensive MSME resource platform. Free tools, guides, and expert guidance in one place.</p>
+        <div class="footer-tricolor" style="margin-top:1rem"><div class="tricolor-block" style="background:#FF6B00"></div><div class="tricolor-block" style="background:white"></div><div class="tricolor-block" style="background:#138808"></div><span style="font-size:0.75rem;margin-left:0.5rem;color:rgba(255,255,255,0.4)">Made in India 🇮🇳</span></div>
+      </div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="schemes.html">Govt Schemes</a></li><li><a href="tools.html">Business Tools</a></li><li><a href="guidebook.html">Guidebooks</a></li><li><a href="finance.html">Finance</a></li></ul></div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="tax.html">Tax &amp; Certificates</a></li><li><a href="compliance.html">Compliance</a></li><li><a href="growth.html">Growth</a></li><li><a href="connect.html">Connect</a></li></ul></div>
+      <div class="footer-col"><h4>Official Portals</h4><ul><li><a href="https://udyamregistration.gov.in" target="_blank">Udyam Registration</a></li><li><a href="https://www.gst.gov.in" target="_blank">GST Portal</a></li><li><a href="https://dgft.gov.in" target="_blank">DGFT / IEC</a></li><li><a href="https://www.startupindia.gov.in" target="_blank">Startup India</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 MSMEHub. For informational purposes only. Always verify with official sources.</span>
+      <span>Built for 6.3 Crore Indian MSMEs 🚀</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// NAV
+document.getElementById('hamburger')?.addEventListener('click',()=>document.getElementById('navLinks')?.classList.toggle('open'));
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks')?.classList.remove('open')));
+window.addEventListener('scroll',()=>{const p=document.getElementById('progressBar');if(p)p.style.width=((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100)+'%';});
+
+// FORM SUBMIT
+function submitForm(e){
+  e.preventDefault();
+  const name=document.getElementById('cf-name').value;
+  const phone=document.getElementById('cf-phone').value;
+  const topic=document.getElementById('cf-topic').value;
+  const msg=document.getElementById('cf-msg').value;
+  if(!name||!phone||!topic||!msg){alert('Please fill all required fields.');return;}
+  document.getElementById('contactForm').style.display='none';
+  document.getElementById('successBanner').classList.add('show');
+  window.scrollTo({top:document.getElementById('successBanner').offsetTop-100,behavior:'smooth'});
+}
+
+// FAQ TOGGLE
+function toggleFAQ(el){
+  el.classList.toggle('open');
+}
+</script>
+</body>
+</html>
